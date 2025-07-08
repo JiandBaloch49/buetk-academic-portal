@@ -1,0 +1,63 @@
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .batch-controls {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .batch-controls input {
+    flex: 1;
+    padding: 0.6rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    min-width: 250px;
+  }
+  
+  .batch-controls button {
+    padding: 0.6rem 1.2rem;
+    font-weight: bold;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .batch-list {
+    margin-top: 1rem;
+  }
+  
+  .batch-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  body.dark .batch-card {
+    background: rgba(34, 34, 34, 0.7);
+  }
+  
+  .batch-card .batch-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  .batch-card button {
+    background: #e74c3c;
+    border: none;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

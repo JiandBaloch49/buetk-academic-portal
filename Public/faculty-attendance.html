@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mark Attendance - Faculty | BUETK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="Style.css">
+  <style>
+
+    /* Main Content Styles */
+    .attendance-page {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .attendance-page h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    body.dark .attendance-page h1 {
+      color: var(--secondary);
+    }
+
+    /* Attendance Controls */
+    .attendance-controls {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(5px);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    body.dark .attendance-controls {
+      background: rgba(34, 34, 34, 0.7);
+    }
+
+    .controls-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .control-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .control-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    body.dark .control-group label {
+      color: var(--secondary);
+    }
+
+    .control-group select {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: var(--font-main);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    body.dark .control-group select {
+      background: #333;
+      border-color: #444;
+      color: white;
+    }
+
+    .control-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 64, 128, 0.2);
+    }
+
+    .date-control {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .date-control input {
+      flex: 1;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: var(--font-main);
+      font-size: 1rem;
+    }
+
+    body.dark .date-control input {
+      background: #333;
+      border-color: #444;
+      color: white;
+    }
+
+    .load-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.8rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-main);
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    body.dark .load-btn {
+      background: var(--secondary);
+      color: var(--text-dark);
+    }
+
+    .load-btn:hover {
+      background: #003366;
+      transform: translateY(-2px);
+    }
+
+    body.dark .load-btn:hover {
+      background: #ffd633;
+    }
+
+    /* Student List Section */
+    #studentListSection {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(5px);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      box-shadow: var(--card-shadow);
+      margin-top: 2rem;
+      display: none;
+    }
+
+    body.dark #studentListSection {
+      background: rgba(34, 34, 34, 0.7);
+    }
+
+    #studentListSection h2 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    body.dark #studentListSection h2 {
+      color: var(--secondary);
+    }
+
+    .student-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .student-table th {
+      background: var(--primary);
+      color: white;
+      text-align: left;
+      padding: 1rem;
+      font-weight: 500;
+    }
+
+    body.dark .student-table th {
+      background: rgba(0, 64, 128, 0.8);
+    }
+
+    .student-table td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark .student-table td {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .student-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .student-table tr:hover {
+      background: rgba(0, 64, 128, 0.05);
+    }
+
+    body.dark .student-table tr:hover {
+      background: rgba(0, 64, 128, 0.1);
+    }
+
+    .attendance-checkbox {
+      width: 24px;
+      height: 24px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    body.dark .attendance-checkbox {
+      accent-color: var(--secondary);
+    }
+
+    .submit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.8rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-main);
+      font-size: 1rem;
+    }
+
+    body.dark .submit-btn {
+      background: var(--secondary);
+      color: var(--text-dark);
+    }
+
+    .submit-btn:hover {
+      background: #003366;
+      transform: translateY(-2px);
+    }
+
+    body.dark .submit-btn:hover {
+      background: #ffd633;
+    }
+
+    /* Footer Styles */
+    footer {
+      background: var(--primary);
+      color: var(--text-light);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .credits {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      
+      nav ul {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .controls-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="faculty-dashboard.html" class="logo-container">
+        <div class="logo">BUETK</div>
+        <span class="uni-name">BUET Khuzdar</span>
+      </a>
+      
+      <nav>
+        <ul>
+          <li><a href="faculty-dashboard.html">Dashboard</a></li>
+          <li><a href="faculty-batches.html">Manage Batches</a></li>
+          <li><a href="#" class="active">Attendance</a></li>
+          <li><a href="faculty-assignments.html">Assignments</a></li>
+          <li><a href="faculty-lectures.html">Lectures</a></li>
+          <li><a href="faculty-upload-result.html">Grading</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <button id="darkModeToggle" class="dark-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="logoutBtn" class="btn">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="attendance-page">
+    <h1>Mark Attendance</h1>
+
+    <section class="attendance-controls">
+      <div class="controls-grid">
+        <div class="control-group">
+          <label for="semesterSelect">Select Semester</label>
+          <select id="semesterSelect">
+            <option value="">-- Select Semester --</option>
+            <option value="fall2024">Fall 2024</option>
+            <option value="spring2024">Spring 2024</option>
+          </select>
+        </div>
+        
+        <div class="control-group">
+          <label for="courseSelect">Select Course</label>
+          <select id="courseSelect">
+            <option value="">-- Select Course --</option>
+            <option value="cs401">CS-401: Advanced Algorithms</option>
+            <option value="cs405">CS-405: Database Systems</option>
+          </select>
+        </div>
+        
+        <div class="control-group">
+          <label>Date</label>
+          <div class="date-control">
+            <input type="date" id="attendanceDate" value="">
+          </div>
+        </div>
+      </div>
+      
+      <button id="loadStudentsBtn" class="load-btn">
+        <i class="fas fa-users"></i> Load Students
+      </button>
+    </section>
+
+    <section id="studentListSection">
+      <h2>Student List</h2>
+      <form id="attendanceForm">
+        <table class="student-table">
+          <thead>
+            <tr>
+              <th>Roll No</th>
+              <th>Name</th>
+              <th>Present</th>
+            </tr>
+          </thead>
+          <tbody id="studentList">
+            <!-- Populated by JavaScript -->
+            <tr>
+              <td>CS-2023-001</td>
+              <td>Ali Javed</td>
+              <td><input type="checkbox" class="attendance-checkbox" checked></td>
+            </tr>
+            <tr>
+              <td>CS-2023-002</td>
+              <td>Sana Baloch</td>
+              <td><input type="checkbox" class="attendance-checkbox" checked></td>
+            </tr>
+            <tr>
+              <td>CS-2023-003</td>
+              <td>Muhammad Khan</td>
+              <td><input type="checkbox" class="attendance-checkbox" checked></td>
+            </tr>
+            <tr>
+              <td>CS-2023-004</td>
+              <td>Fatima Ahmed</td>
+              <td><input type="checkbox" class="attendance-checkbox" checked></td>
+            </tr>
+            <tr>
+              <td>CS-2023-005</td>
+              <td>Bilal Ahmed</td>
+              <td><input type="checkbox" class="attendance-checkbox" checked></td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-check-circle"></i> Submit Attendance
+        </button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+    </div>
+  </footer>
+
+  <script src="utils/js/faculty-attendance.js">
+  
+  </script>
+</body>
+</html>

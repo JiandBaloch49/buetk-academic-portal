@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BUETK - Authentication</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    /* ===================== */
+    /* GLOBAL STYLES */
+    /* ===================== */
+    :root {
+      --primary: #004080;
+      --secondary: #ffcc00;
+      --accent: #0066cc;
+      --light-bg: #f9f9f9;
+      --dark-bg: #121212;
+      --text-dark: #333333;
+      --text-light: #fafafa;
+      --card-bg: #ffffff;
+      --card-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      --border-radius: 12px;
+      --transition: all 0.3s ease-out;
+      --font-main: 'Poppins', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    body.dark {
+      background-color: var(--dark-bg);
+      color: var(--text-light);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.2rem;
+      background: var(--secondary);
+      color: var(--text-dark);
+      border-radius: 50px;
+      font-weight: 600;
+      transition: var(--transition);
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(255, 204, 0, 0.25);
+    }
+
+    .btn:hover {
+      background: #ffd633;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(255, 204, 0, 0.35);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 64, 128, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: #003366;
+      box-shadow: 0 6px 15px rgba(0, 64, 128, 0.35);
+    }
+
+    /* ===================== */
+    /* HEADER STYLES */
+    /* ===================== */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
+
+    body.dark header {
+      background: rgba(18, 18, 18, 0.95);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+    }
+
+    .logo {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--primary);
+    }
+
+    .uni-name {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.8rem;
+    }
+
+    nav a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: var(--transition);
+    }
+
+    body.dark nav a {
+      color: var(--text-light);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--secondary);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--primary);
+    }
+
+    body.dark nav a:hover,
+    body.dark nav a.active {
+      color: var(--secondary);
+    }
+
+    .auth-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .dark-toggle {
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .dark-toggle:hover {
+      background: rgba(0, 64, 128, 0.1);
+    }
+
+    body.dark .dark-toggle {
+      color: var(--secondary);
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--primary);
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    /* ===================== */
+    /* AUTHENTICATION PAGES */
+    /* ===================== */
+    .auth-container {
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      padding: 2rem 1.5rem;
+      background: linear-gradient(135deg, rgba(0, 64, 128, 0.05), rgba(255, 204, 0, 0.05));
+    }
+
+    body.dark .auth-container {
+      background: linear-gradient(135deg, rgba(0, 64, 128, 0.1), rgba(255, 204, 0, 0.1));
+    }
+
+    .auth-form-container {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 3rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    body.dark .auth-form-container {
+      background: rgba(34, 34, 34, 0.7);
+    }
+
+    .auth-form-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+
+    .auth-form-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .auth-form-header h2 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    body.dark .auth-form-header h2 {
+      color: var(--secondary);
+    }
+
+    .auth-form-header p {
+      color: var(--text-dark);
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    body.dark .auth-form-header p {
+      color: var(--text-light);
+    }
+
+    .form-group {
+      margin-bottom: 1.8rem;
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.7rem;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    body.dark .form-group label {
+      color: var(--secondary);
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      border: 2px solid #e1e1e1;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: var(--font-main);
+      transition: var(--transition);
+    }
+
+    body.dark .form-group input,
+    body.dark .form-group select {
+      background: rgba(50, 50, 50, 0.5);
+      border-color: #444;
+      color: white;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 64, 128, 0.2);
+    }
+
+    .password-toggle {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #777;
+      cursor: pointer;
+    }
+
+    body.dark .password-toggle {
+      color: #aaa;
+    }
+
+    .auth-form-container .btn {
+      width: 100%;
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      padding: 1rem;
+    }
+
+    .auth-footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #eee;
+    }
+
+    body.dark .auth-footer {
+      border-top-color: #333;
+    }
+
+    .auth-footer p {
+      color: var(--text-dark);
+    }
+
+    body.dark .auth-footer p {
+      color: var(--text-light);
+    }
+
+    .auth-footer a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    body.dark .auth-footer a {
+      color: var(--secondary);
+    }
+
+    .auth-footer a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .login-info {
+      margin-top: 2.5rem;
+      padding: 1.8rem;
+      background: rgba(0, 64, 128, 0.05);
+      border-radius: var(--border-radius);
+    }
+
+    body.dark .login-info {
+      background: rgba(0, 64, 128, 0.15);
+    }
+
+    .login-info h3 {
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    body.dark .login-info h3 {
+      color: var(--secondary);
+    }
+
+    .login-info ul {
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .login-info li {
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .role-indicator {
+      text-align: center;
+      font-weight: 600;
+      padding: 0.8rem;
+      border-radius: 8px;
+      background: rgba(0, 64, 128, 0.1);
+      color: var(--primary);
+      border: 2px dashed var(--secondary);
+    }
+
+    body.dark .role-indicator {
+      background: rgba(0, 64, 128, 0.2);
+      color: var(--secondary);
+    }
+
+    /* ===================== */
+    /* FOOTER STYLES */
+    /* ===================== */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 3rem 1.5rem 2rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    footer .social {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    footer .social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    footer .social a:hover {
+      background: var(--secondary);
+      transform: translateY(-3px);
+      color: var(--primary);
+    }
+
+    .credits {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* ===================== */
+    /* RESPONSIVE STYLES */
+    /* ===================== */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      
+      nav ul {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 280px;
+        height: 100vh;
+        background: var(--light-bg);
+        flex-direction: column;
+        padding: 6rem 2rem 2rem;
+        transform: translateX(100%);
+        transition: var(--transition);
+        z-index: 999;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+      }
+      
+      body.dark nav ul {
+        background: var(--dark-bg);
+      }
+      
+      nav ul.show {
+        transform: translateX(0);
+      }
+      
+      .auth-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+      
+      .auth-form-container {
+        padding: 2.5rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .auth-form-header h2 {
+        font-size: 1.8rem;
+      }
+      
+      .header-container {
+        padding: 1rem;
+      }
+      
+      .uni-name {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo-container">
+        <img src="images.png" alt="BUETK Logo" class="logo">
+        <span class="uni-name">BUETK</span>
+      </a>
+      
+      <button id="mobileNavToggle" class="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav>
+        <ul id="mobileNav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="auth-links">
+            <a href="login.html" class="btn">Login</a>
+            <button id="darkModeToggle" class="dark-toggle">
+              <i class="fas fa-moon"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="auth-container">
+    <div class="container">
+      <div class="auth-form-container">
+        <div class="auth-form-header">
+          <h2>Create Your Account</h2>
+          <p>Join the BUETK community today</p>
+        </div>
+        
+        <form id="signupForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">University Email</label>
+            <input type="email" id="email" placeholder="example@buetk.edu.pk" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Create a strong password" required>
+            <button type="button" class="password-toggle" id="passwordToggle">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+          
+          <div class="form-group">
+            <label for="role">Account Type</label>
+            <select id="role" required>
+              <option value="" disabled selected>Select your role</option>
+              <option value="student">Student</option>
+              <option value="admin">Administrator</option>
+              <option value="faculty">Faculty Member</option>
+            </select>
+          </div>
+          <div id="semesterContainer" style="display: none;">
+            <label for="semesterSelect">Select Your Semester</label>
+            <select id="semesterSelect" required>
+              <option value="">Select Semester</option>
+              <option value="1">Semester 1</option>
+              <option value="2">Semester 2</option>
+              <option value="3">Semester 3</option>
+              <option value="4">Semester 4</option>
+              <option value="5">Semester 5</option>
+              <option value="6">Semester 6</option>
+              <option value="7">Semester 7</option>
+              <option value="8">Semester 8</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Create Account</button>
+          <p id="formMessage"></p>
+        </form>
+        
+        <div class="auth-footer">
+          <p>Already have an account? <a href="login.html">Log in here</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <p>Kahtan Khuzdar, Balochistan | +123 456 7890</p>
+      
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+    </div>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const signupForm = document.getElementById('signupForm');
+  const roleSelect = document.getElementById('role');
+  const semesterContainer = document.getElementById('semesterContainer');
+  const semesterSelect = document.getElementById('semester');
+
+  // Show/hide semester dropdown based on selected role
+  roleSelect.addEventListener('change', () => {
+    if (roleSelect.value === 'student') {
+      semesterContainer.style.display = 'block';
+      semesterSelect.required = true;
+    } else {
+      semesterContainer.style.display = 'none';
+      semesterSelect.required = false;
+      semesterSelect.value = ''; // reset semester
+    }
+  });
+
+  if (signupForm) {
+    signupForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const role = roleSelect.value;
+      const semester = semesterSelect.value;
+      const msg = document.getElementById('formMessage');
+
+      // Validate required fields
+      if (!name || !email || !password || !role) {
+        msg.textContent = 'Please fill all fields and select a role';
+        msg.style.color = 'red';
+        return;
+      }
+
+      // If student, semester must be selected
+      if (role === 'student' && !semester) {
+        msg.textContent = 'Please select your semester';
+        msg.style.color = 'red';
+        return;
+      }
+
+      msg.textContent = 'Creating your account...';
+      msg.style.color = 'blue';
+
+      let endpoint;
+
+      // Determine API route based on role
+      switch (role) {
+        case 'admin':
+          endpoint = 'http://localhost:5000/api/admin/signup';
+          break;
+        case 'student':
+          endpoint = 'http://localhost:5000/api/student/signup';
+          break;
+        case 'faculty':
+          endpoint = 'http://localhost:5000/api/faculty/signup';
+          break;
+        default:
+          msg.textContent = 'Invalid role selected';
+          msg.style.color = 'red';
+          return;
+      }
+
+      // Prepare signup payload
+      const payload = {
+        name,
+        email,
+        password
+      };
+
+      if (role === 'student') {
+        payload.semester = semester;
+      }
+
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          msg.innerHTML = `${role.charAt(0).toUpperCase() + role.slice(1)} account created successfully! ✅`;
+          msg.style.color = 'green';
+
+          setTimeout(() => {
+            window.location.href = 'login.html';
+          }, 2000);
+        } else {
+          msg.textContent = data.error || 'Signup failed';
+          msg.style.color = 'red';
+        }
+      } catch (error) {
+        console.error('Signup error:', error);
+        msg.textContent = 'Network error. Please try again.';
+        msg.style.color = 'red';
+      }
+    });
+  }
+});
+
+
+  </script>
+</body>
+</html>

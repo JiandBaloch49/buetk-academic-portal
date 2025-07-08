@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Attendance - BUETK</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+  <h1>Your Attendance Report</h1>
+
+  <div id="attendanceRecords">
+    Loading attendance records...
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const token = localStorage.getItem('token');
+      const container = document.getElementById('attendanceRecords');
+
+      const res = await fetch('/api/student/attendance', {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      const attendance = await res.json();
+
+      container.innerHTML = attendance.map(rec => `
+        <div>
+          <strong>Course:</strong> ${rec.courseName} <br>
+          <strong>Attendance:</strong> ${rec.presentDays}/${rec.totalDays} days (${((rec.presentDays / rec.totalDays) * 100).toFixed(1)}%)
+        </div>
+        <hr>
+      `).join('');
+    });
+  </script>
+
+</body>
+</html>

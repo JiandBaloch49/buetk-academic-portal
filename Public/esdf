@@ -1,0 +1,4743 @@
+<!-- WEBSITE_PROJ/public/index1.html -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>BUETK University</title>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+
+
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="Style.css" />
+
+</head>
+
+<body>
+
+
+  <header data-aos="fade-down">
+
+    <div class="header-container">
+
+      <a href="index.html" class="logo-container">
+
+        <img src="images.png" alt="BUETK Logo" class="logo" />
+
+        <span class="uni-name">BUETK</span>
+
+      </a>
+
+  
+
+      <!-- Hamburger toggle for mobile -->
+
+      <button id="mobileNavToggle" class="hamburger">
+
+        <i class="fas fa-bars"></i>
+
+      </button>
+
+  
+
+      <nav>
+
+        <ul id="mobileNav" class="mobile-nav">
+
+          <li><a href="index.html">Home</a></li>
+
+          <li><a href="about.html">About</a></li>
+
+          <li><a href="programs.html">Programs</a></li>
+
+          <li><a href="admissions.html">Admissions</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+
+          
+
+         
+
+          
+
+          <li>
+
+            <button id="darkModeToggle" class="dark-toggle">
+
+              <i class="fas fa-moon"></i>
+
+            </button>
+
+        
+
+        </li>
+
+        
+
+        </ul>
+
+      
+
+      </nav>
+
+      <li id="authLinks">
+
+        <a href="login.html" class="btn" id="loginLink">Login</a>
+
+        <a href="signup.html" class="btn" id="signupLink" style="margin-left: 10px;">Signup</a>
+
+      </li>
+
+    </div>
+
+  </header>
+
+  
+
+
+  <section class="hero">
+
+    <div class="hero-content" data-aos="zoom-in">
+
+      <h1>Engineering Tomorrow’s Leaders</h1>
+
+      <p>At BUETK, we blend innovation, research, and community to empower every student.</p>
+
+      <a href="about.html" class="btn">Learn More</a>
+
+    </div>
+
+
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+
+      <path fill="#f9f9f9" d="M0,288L48,272C96,256,192,224,288,218.7C384,213,480,235,576,229.3C672,224,768,192,864,165.3C960,139,1056,117,1152,144C1248,171,1344,245,1392,282.7L1440,320L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+
+    </svg>
+
+  </section>
+
+
+
+  <section class="programs" data-aos="fade-up">
+
+    <h2>Our Top Programs</h2>
+
+    <div class="programs-grid">
+
+      <div class="program-card">
+
+        <i class="fas fa-laptop-code fa-2x"></i>
+
+        <h3>Computer Science</h3>
+
+        <p>AI, Cybersecurity, Data Science & more—build the future of technology.</p>
+
+      </div>
+
+      <div class="program-card">
+
+        <i class="fas fa-bolt fa-2x"></i>
+
+        <h3>Electrical Engineering</h3>
+
+        <p>Power systems, Robotics, Embedded Systems & cutting-edge electronics.</p>
+
+      </div>
+
+      <div class="program-card">
+
+        <i class="fas fa-building fa-2x"></i>
+
+        <h3>Civil Engineering</h3>
+
+        <p>Infrastructure, Urban Design, Geotechnical expertise shaping tomorrow’s cities.</p>
+
+      </div>
+
+      <div class="program-card">
+
+        <i class="fas fa-cogs fa-2x"></i>
+
+        <h3>Mechanical Engineering</h3>
+
+        <p>Thermodynamics, Advanced Manufacturing & sustainable design solutions.</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="testimonials" data-aos="fade-up">
+
+    <h2>What Our Students Say</h2>
+
+    <div class="slider">
+
+      <div class="testimonial">
+
+        <p>“BUETK gave me the hands-on experience I needed to land my dream job in cybersecurity.”</p>
+
+        <h4>— Ayesha Khan, Class of 2024</h4>
+
+      </div>
+
+      <div class="testimonial">
+
+        <p>“The support and mentorship here are unparalleled. I’ve grown so much academically and personally.”</p>
+
+        <h4>— Bilal Ahmed, Class of 2023</h4>
+
+      </div>
+
+      <div class="testimonial">
+
+        <p>“From labs to lectures, every resource at BUETK pushed me to excel in mechanical design.”</p>
+
+        <h4>— Fatima Ali, Class of 2025</h4>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GALLERY -->
+
+  <section class="gallery" data-aos="fade-up">
+
+    <h2>Campus Life</h2>
+
+    <div class="gallery-grid">
+
+      <img src="Hostels.png" alt="Campus View" />
+
+      <img src="210214241_1739765409541116_7190939431455774788_n.jpg" alt="Students in Lab" />
+
+      <img src="Untitled.jpeg" alt="Cultural Event" />
+
+      <img src="images.png" alt="Lecture Hall" />
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer data-aos="fade-up">
+
+    <div class="footer-container">
+
+      <p>Kahtan Khuzdar, Balochistan | +123 456 7890</p>
+
+      <div class="social">
+
+        <a href="#"><i class="fab fa-facebook"></i></a>
+
+        <a href="#"><i class="fab fa-twitter"></i></a>
+
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+
+      </div>
+
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch | Moiz Kurd | Mutablib Baloch</p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- SCRIPTS -->
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="Script.js"></script>
+
+  <script> AOS.init({ duration: 800, once: true }); </script>
+
+</body>
+
+</html>
+
+<!-- WEBSITE_PROJ/public/about.html -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>About Us – BUETK</title>
+
+
+  <!-- Google Fonts & Icons -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+
+  <!-- AOS -->
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+  <!-- Main CSS -->
+
+  <link rel="stylesheet" href="Style.css"/>
+
+</head>
+
+<body>
+
+
+  <header data-aos="fade-down">
+
+    <div class="header-container">
+
+      <a href="index.html" class="logo-container">
+
+        <img src="images.png" alt="BUETK Logo" class="logo" />
+
+        <span class="uni-name">BUETK</span>
+
+      </a>
+
+  
+
+      <!-- Hamburger toggle for mobile -->
+
+      <button id="mobileNavToggle" class="hamburger">
+
+        <i class="fas fa-bars"></i>
+
+      </button>
+
+  
+
+      <nav>
+
+        <ul id="mobileNav" class="mobile-nav">
+
+          <li><a href="index.html">Home</a></li>
+
+          <li><a href="about.html">About</a></li>
+
+          <li><a href="programs.html">Programs</a></li>
+
+          <li><a href="admissions.html">Admissions</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+
+          
+
+         
+
+          
+
+          <li>
+
+            <button id="darkModeToggle" class="dark-toggle">
+
+              <i class="fas fa-moon"></i>
+
+            </button>
+
+        
+
+        </li>
+
+        
+
+        </ul>
+
+      
+
+      </nav>
+
+      <li id="authLinks">
+
+        <a href="login.html" class="btn" id="loginLink">Login</a>
+
+        <a href="signup.html" class="btn" id="signupLink" style="margin-left: 10px;">Signup</a>
+
+      </li>
+
+    </div>
+
+  </header>
+
+      
+
+
+  <!-- HERO -->
+
+  <section class="hero" style="clip-path: polygon(0 0,100% 0,100% 90%,0 100%);" data-aos="zoom-in">
+
+    <div class="hero-content">
+
+      <h1>About BUETK</h1>
+
+      <p>Learn our history, vision, and leadership guiding innovation in Balochistan.</p>
+
+    </div>
+
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+
+      <path fill="#f9f9f9" d="M0,224L48,202.7C96,181,192,139,288,144C384,149,480,203,576,224C672,245,768,235,864,202.7C960,171,1056,117,1152,112C1248,107,1344,149,1392,170.7L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+
+    </svg>
+
+  </section>
+
+
+  <!-- TABS -->
+
+  <section class="tabs-section" data-aos="fade-up">
+
+    <h2>Who We Are</h2>
+
+    <div class="tabs">
+
+      <button class="tab active" data-tab="history">History</button>
+
+      <button class="tab" data-tab="vision">Vision</button>
+
+      <button class="tab" data-tab="leadership">Leadership</button>
+
+    </div>
+
+    <div class="tab-content">
+
+      <div id="history" class="tab-pane active">
+
+        <p>Founded to bring engineering education to Balochistan, BUETK has grown from a small institution into a thriving research university, graduating thousands of engineers.</p>
+
+      </div>
+
+      <div id="vision" class="tab-pane">
+
+        <p>We envision a future where innovation drives social progress. Our commitment is to foster critical thinking, entrepreneurship, and cutting-edge research.</p>
+
+      </div>
+
+      <div id="leadership" class="tab-pane">
+
+        <p>Led by a dedicated Vice Chancellor and an expert faculty, BUETK focuses on integrity, excellence, and community engagement to shape tomorrow’s leaders.</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer data-aos="fade-up">
+
+    <div class="footer-container">
+
+      <p>Kahtan Khuzdar, Balochistan | +123 456 7890</p>
+
+      <div class="social">
+
+        <a href="#"><i class="fab fa-facebook"></i></a>
+
+        <a href="#"><i class="fab fa-twitter"></i></a>
+
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+
+      </div>
+
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- SCRIPTS -->
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="Script.js"></script>
+
+  <script> AOS.init({ duration: 800, once: true }); </script>
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Admin Dashboard - BUETK</title>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="Public/utils/css/Style.css"/>
+
+</head>
+
+<body>
+
+
+  <header data-aos="fade-down">
+
+    <div class="header-container">
+
+      <a href="index.html" class="logo-container">
+
+        <img src="images.png" alt="BUETK Logo" class="logo" />
+
+        <span class="uni-name">BUETK</span>
+
+      </a>
+
+  
+
+      <!-- Hamburger toggle for mobile -->
+
+      <button id="mobileNavToggle" class="hamburger">
+
+        <i class="fas fa-bars"></i>
+
+      </button>
+
+  
+
+      <nav>
+
+        <ul id="mobileNav" class="mobile-nav">
+
+          <li><a href="index.html">Home</a></li>
+
+          <li><a href="about.html">About</a></li>
+
+          <li><a href="programs.html">Programs</a></li>
+
+          <li><a href="admissions.html">Admissions</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+
+          
+
+         
+
+          
+
+          <li>
+
+            <button id="darkModeToggle" class="dark-toggle">
+
+              <i class="fas fa-moon"></i>
+
+            </button>
+
+        
+
+        </li>
+
+        
+
+        </ul>
+
+      
+
+      </nav>
+
+      <li id="authLinks">
+
+        <a href="login.html" class="btn" id="loginLink">Login</a>
+
+        <a href="signup.html" class="btn" id="signupLink" style="margin-left: 10px;">Signup</a>
+
+      </li>
+
+    </div>
+
+  </header>
+
+  
+
+  <main class="admin-container">
+
+    <div class="admin-header">
+
+      <h1>Administrator Dashboard</h1>
+
+      <p>Manage university resources and student data</p>
+
+    </div>
+
+
+    <div class="admin-grid">
+
+      <!-- Admin Sidebar -->
+
+      <div class="admin-sidebar">
+
+        <h3>Admin Tools</h3>
+
+        <ul>
+
+          <li><a href="manage-students.html" class="active"><i class="fas fa-users"></i> Manage Students</a></li>
+
+          <li><a href="manage-courses.html"><i class="fas fa-book"></i> Manage Courses</a></li>
+
+          <li><a href="manage-results.html"><i class="fas fa-chart-bar"></i> Manage Results</a></li>
+
+          <li><a href="system-settings.html"><i class="fas fa-cog"></i> System Settings</a></li>
+
+          <li><a href="reports.html"><i class="fas fa-file-alt"></i> Generate Reports</a></li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- Main Content -->
+
+      <div class="admin-main">
+
+        <h2>Student Management</h2>
+
+        
+
+        <div class="admin-actions">
+
+          <button id="addStudentBtn" class="btn"><i class="fas fa-plus"></i> Add Student</button>
+
+          <div class="search-box">
+
+            <input type="text" id="studentSearch" placeholder="Search students...">
+
+            <button><i class="fas fa-search"></i></button>
+
+          </div>
+
+        </div>
+
+
+        <div class="table-responsive">
+
+          <table class="admin-table">
+
+            <thead>
+
+              <tr>
+
+                <th>Student ID</th>
+
+                <th>Name</th>
+
+                <th>Email</th>
+
+                <th>Department</th>
+
+                <th>Status</th>
+
+                <th>Actions</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody id="studentsTable">
+
+              <!-- Students will be populated here -->
+
+              <tr>
+
+                <td colspan="6" class="loading">Loading students...</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+
+        <div class="pagination">
+
+          <button disabled><i class="fas fa-chevron-left"></i></button>
+
+          <span>Page 1 of 1</span>
+
+          <button disabled><i class="fas fa-chevron-right"></i></button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+
+    <div class="footer-container">
+
+      <p>Kahtan Khuzdar, Balochistan | +123 456 7890</p>
+
+      <div class="social">
+
+        <a href="#"><i class="fab fa-facebook"></i></a>
+
+        <a href="#"><i class="fab fa-twitter"></i></a>
+
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+
+      </div>
+
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- Add Student Modal -->
+
+  <div id="addStudentModal" class="modal">
+
+    <div class="modal-content">
+
+      <span class="close">&times;</span>
+
+      <h2>Add New Student</h2>
+
+      <form id="addStudentForm">
+
+        <div class="form-group">
+
+          <label for="studentName">Full Name</label>
+
+          <input type="text" id="studentName" required>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="studentEmail">Email</label>
+
+          <input type="email" id="studentEmail" required>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="studentPassword">Password</label>
+
+          <input type="password" id="studentPassword" required>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="studentDepartment">Department</label>
+
+          <select id="studentDepartment" required>
+
+            <option value="Computer Science">Computer Science</option>
+
+            <option value="Electrical Engineering">Electrical Engineering</option>
+
+            <option value="Civil Engineering">Civil Engineering</option>
+
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+
+          </select>
+
+        </div>
+
+        <button type="submit" class="btn">Add Student</button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <script src="admin.js"></script>
+
+  <script src="Script.js"></script>
+
+</body>
+
+</html>
+
+<!-- WEBSITE_PROJ/public/admissions.html -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Admissions – BUETK</title>
+
+
+  <!-- Google Fonts & Icons -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+
+  <!-- AOS -->
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+  <!-- Main CSS -->
+
+  <link rel="stylesheet" href="Style.css"/>
+
+</head>
+
+<body>
+
+
+  <header data-aos="fade-down">
+
+    <div class="header-container">
+
+      <a href="index.html" class="logo-container">
+
+        <img src="images.png" alt="BUETK Logo" class="logo" />
+
+        <span class="uni-name">BUETK</span>
+
+      </a>
+
+  
+
+      <!-- Hamburger toggle for mobile -->
+
+      <button id="mobileNavToggle" class="hamburger">
+
+        <i class="fas fa-bars"></i>
+
+      </button>
+
+  
+
+      <nav>
+
+        <ul id="mobileNav" class="mobile-nav">
+
+          <li><a href="index.html">Home</a></li>
+
+          <li><a href="about.html">About</a></li>
+
+          <li><a href="programs.html">Programs</a></li>
+
+          <li><a href="admissions.html">Admissions</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+
+          
+
+         
+
+          
+
+          <li>
+
+            <button id="darkModeToggle" class="dark-toggle">
+
+              <i class="fas fa-moon"></i>
+
+            </button>
+
+        
+
+        </li>
+
+        
+
+        </ul>
+
+      
+
+      </nav>
+
+      <li id="authLinks">
+
+        <a href="login.html" class="btn" id="loginLink">Login</a>
+
+        <a href="signup.html" class="btn" id="signupLink" style="margin-left: 10px;">Signup</a>
+
+      </li>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero" style="clip-path: polygon(0 0,100% 0,100% 80%,0 100%);" data-aos="zoom-in">
+
+    <div class="hero-content">
+
+      <h1>Admissions 2025</h1>
+
+      <p>Join our community—apply now and shape your future with BUETK.</p>
+
+    </div>
+
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+
+      <path fill="#ffffff" d="M0,256L48,250.7C96,245,192,235,288,213.3C384,192,480,160,576,149.3C672,139,768,149,864,149.3C960,149,1056,139,1152,138.7C1248,139,1344,149,1392,154.7L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+
+    </svg>
+
+  </section>
+
+
+  <!-- ADMISSION STEPS -->
+
+  <section class="admissions" data-aos="fade-up">
+
+    <h2>How to Apply</h2>
+
+    <ol class="admission-steps">
+
+      <li>Download the <a href="docs/application-form.pdf" target="_blank">Application Form</a>.</li>
+
+      <li>Complete the form and attach transcripts & certificates.</li>
+
+      <li>Submit through our <a href="https://portal.buetk.edu.pk" target="_blank">Online Portal</a> or in person.</li>
+
+      <li>Pay processing fee and track your application status.</li>
+
+      <li>Check the <a href="docs/merit-list.pdf" target="_blank">Merit List</a> when published.</li>
+
+    </ol>
+
+    <p>For detailed policies, see the <a href="docs/admission-policy.pdf" target="_blank">Admission Policy PDF</a>.</p>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer data-aos="fade-up">
+
+    <div class="footer-container">
+
+      <p>Kahtan Khuzdar, Balochistan | +123 456 7890</p>
+
+      <div class="social">
+
+        <a href="#"><i class="fab fa-facebook"></i></a>
+
+        <a href="#"><i class="fab fa-twitter"></i></a>
+
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+
+      </div>
+
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- SCRIPTS -->
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="Script.js"></script>
+
+  <script> AOS.init({ duration: 800, once: true }); </script>
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Your CGPA</title>
+
+  <link rel="stylesheet" href="Style.css">
+
+  <script src="/home/mrblack/Labs/Website_Proj/Public/utils/js/cgpa.js" defer></script>
+
+</head>
+
+<body>
+
+
+  <div id="header"></div>
+
+
+  <h1>Your Current CGPA</h1>
+
+  <div id="cgpaValue">
+
+    <p>Loading your CGPA...</p>
+
+  </div>
+
+<script src="Public/utils/js/cgpa.js"></script>
+
+</body>
+
+</html>
+
+<!-- WEBSITE_PROJ/public/contact.html -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Contact Us – BUETK</title>
+
+
+  <!-- Google Fonts & Icons -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+
+  <!-- AOS -->
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+  <!-- Main CSS -->
+
+  <link rel="stylesheet" href="Style.css"/>
+
+</head>
+
+<body>
+
+
+  <header data-aos="fade-down">
+
+    <div class="header-container">
+
+      <a href="index.html" class="logo-container">
+
+        <img src="images.png" alt="BUETK Logo" class="logo" />
+
+        <span class="uni-name">BUETK</span>
+
+      </a>
+
+  
+
+      <!-- Hamburger toggle for mobile -->
+
+      <button id="mobileNavToggle" class="hamburger">
+
+        <i class="fas fa-bars"></i>
+
+      </button>
+
+  
+
+      <nav>
+
+        <ul id="mobileNav" class="mobile-nav">
+
+          <li><a href="index.html">Home</a></li>
+
+          <li><a href="about.html">About</a></li>
+
+          <li><a href="programs.html">Programs</a></li>
+
+          <li><a href="admissions.html">Admissions</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+
+          
+
+         
+
+          
+
+          <li>
+
+            <button id="darkModeToggle" class="dark-toggle">
+
+              <i class="fas fa-moon"></i>
+
+            </button>
+
+        
+
+        </li>
+
+        
+
+        </ul>
+
+      
+
+      </nav>
+
+      <li id="authLinks">
+
+        <a href="login.html" class="btn" id="loginLink">Login</a>
+
+        <a href="signup.html" class="btn" id="signupLink" style="margin-left: 10px;">Signup</a>
+
+      </li>
+
+    </div>
+
+  </header>
+
+      
+
+
+  <!-- HERO -->
+
+  <section class="hero" style="clip-path: polygon(0 0,100% 0,100% 90%,0 100%);" data-aos="zoom-in">
+
+    <div class="hero-content">
+
+      <h1>Get in Touch</h1>
+
+      <p>Questions? Feedback? We’d love to hear from you.</p>
+
+    </div>
+
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+
+      <path fill="#f9f9f9" d="M0,64L48,74.7C96,85,192,107,288,122.7C384,139,480,149,576,149.3C672,149,768,139,864,133.3C960,128,1056,128,1152,149.3C1248,171,1344,213,1392,234.7L1440,256L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+
+    </svg>
+
+  </section>
+
+
+  <!-- CONTACT FORM -->
+
+  <section class="contact" data-aos="fade-up">
+
+    <h2>Contact Us</h2>
+
+    <form class="contact-form" id="contactForm">
+
+      <input type="text" id="name" placeholder="Your Name" required/>
+
+      <input type="email" id="email" placeholder="Your Email" required/>
+
+      <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+
+      <p id="formMessage"></p>
+
+    </form>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer data-aos="fade-up">
+
+    <div class="footer-container">
+
+      <p>Kahtan Khuzdar, Balochistan | +123 456 7890</p>
+
+      <div class="social">
+
+        <a href="#"><i class="fab fa-facebook"></i></a>
+
+        <a href="#"><i class="fab fa-twitter"></i></a>
+
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+
+      </div>
+
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- SCRIPTS -->
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="Script.js"></script>
+
+  <script> AOS.init({ duration: 800, once: true }); </script>
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>My Courses</title>
+
+  <link rel="stylesheet" href="Style.css">
+
+  <script src="Public/utils/js/courses.js" defer></script>
+
+</head>
+
+<body>
+
+
+  <div id="header"></div>
+
+
+  <h1>Your Registered Courses</h1>
+
+  <div id="coursesList">
+
+    <p>Loading your courses...</p>
+
+  </div>
+
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Student Dashboard - BUETK</title>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="Style.css"/>
+
+</head>
+
+<body>
+
+
+  <header data-aos="fade-down">
+
+    <div class="header-container">
+
+      <a href="index.html" class="logo-container">
+
+        <img src="images.png" alt="BUETK Logo" class="logo" />
+
+        <span class="uni-name">BUETK</span>
+
+      </a>
+
+  
+
+      <button id="mobileNavToggle" class="hamburger">
+
+        <i class="fas fa-bars"></i>
+
+      </button>
+
+  
+
+      <nav>
+
+        <ul id="mobileNav" class="mobile-nav">
+
+          <li><a href="index1.html">Home</a></li>
+
+          <li><a href="dashboard.html" class="active">Dashboard</a></li>
+
+          <li><a href="courses.html">Courses</a></li>
+
+          <li><a href="results.html">Results</a></li>
+
+          <li><a href="#" id="logoutBtn">Logout</a></li>
+
+          <button id="darkModeToggle" class="dark-toggle">
+
+            <i class="fas fa-moon"></i>
+
+          </button>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main class="dashboard-container">
+
+    <div class="dashboard-header">
+
+      <h1>Student Dashboard</h1>
+
+      <p>Welcome back, <span id="studentName"></span></p>
+
+    </div>
+
+
+    <div class="dashboard-grid">
+
+      <!-- Profile Card -->
+
+      <div class="dashboard-card">
+
+        <div class="card-header">
+
+          <h2><i class="fas fa-user"></i> Your Profile</h2>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="profile-info">
+
+            <p><strong>Name:</strong> <span id="profileName"></span></p>
+
+            <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+
+            <p><strong>Student ID:</strong> <span id="profileId"></span></p>
+
+            <p><strong>Department:</strong> <span id="profileDept"></span></p>
+
+          </div>
+
+          <button id="editProfileBtn" class="btn">Edit Profile</button>
+
+        </div>
+
+      </div>
+
+
+      <!-- Academic Summary Card -->
+
+      <div class="dashboard-card">
+
+        <div class="card-header">
+
+          <h2><i class="fas fa-graduation-cap"></i> Academic Summary</h2>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="stats-grid">
+
+            <div class="stat-card">
+
+              <i class="fas fa-book"></i>
+
+              <h3>Registered Courses</h3>
+
+              <p id="courseCount">0</p>
+
+            </div>
+
+            <div class="stat-card">
+
+              <i class="fas fa-chart-line"></i>
+
+              <h3>Current CGPA</h3>
+
+              <p id="cgpaValue">0.00</p>
+
+            </div>
+
+            <div class="stat-card">
+
+              <i class="fas fa-calendar"></i>
+
+              <h3>Current Semester</h3>
+
+              <p>Fall 2023</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Quick Actions Card -->
+
+      <div class="dashboard-card">
+
+        <div class="card-header">
+
+          <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="action-grid">
+
+            <a href="courses.html" class="action-card">
+
+              <i class="fas fa-book-open"></i>
+
+              <span>Register Courses</span>
+
+            </a>
+
+            <a href="results.html" class="action-card">
+
+              <i class="fas fa-file-alt"></i>
+
+              <span>View Results</span>
+
+            </a>
+
+            <a href="#" class="action-card" id="transcriptBtn">
+
+              <i class="fas fa-download"></i>
+
+              <span>Download Transcript</span>
+
+            </a>
+
+            <a href="timetable.html" class="action-card">
+
+              <i class="fas fa-calendar-alt"></i>
+
+              <span>Class Schedule</span>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Recent Courses Card -->
+
+      <div class="dashboard-card">
+
+        <div class="card-header">
+
+          <h2><i class="fas fa-book"></i> Your Courses</h2>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="courses-list" id="coursesList">
+
+            <!-- Courses will be populated here -->
+
+            <div class="loader">Loading courses...</div>
+
+          </div>
+
+          <a href="courses.html" class="btn view-all">View All Courses</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+
+    <div class="footer-container">
+
+      <p>Kahtan Khuzdar, Balochistan | +123 456 7890</p>
+
+      <div class="social">
+
+        <a href="#"><i class="fab fa-facebook"></i></a>
+
+        <a href="#"><i class="fab fa-twitter"></i></a>
+
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+
+      </div>
+
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- Profile Edit Modal -->
+
+  <div id="profileModal" class="modal">
+
+    <div class="modal-content">
+
+      <span class="close">&times;</span>
+
+      <h2>Edit Profile</h2>
+
+      <form id="profileForm">
+
+        <div class="form-group">
+
+          <label for="editName">Full Name</label>
+
+          <input type="text" id="editName" required>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="editEmail">Email</label>
+
+          <input type="email" id="editEmail" required>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="editDepartment">Department</label>
+
+          <select id="editDepartment" required>
+
+            <option value="Computer Science">Computer Science</option>
+
+            <option value="Electrical Engineering">Electrical Engineering</option>
+
+            <option value="Civil Engineering">Civil Engineering</option>
+
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+
+          </select>
+
+        </div>
+
+        <button type="submit" class="btn">Save Changes</button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <script src="Public/utils/js/dashboard.js"></script>
+
+  <script src="Script.js"></script>
+
+</body>
+
+</html>
+
+<!-- WEBSITE_PROJ/public/index1.html -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>BUETK University</title>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+
+
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="Style.css" />
+
+</head>
+
+<body>
+
+
+  <header data-aos="fade-down">
+
+    <div class="header-container">
+
+      <a href="index.html" class="logo-container">
+
+        <img src="images.png" alt="BUETK Logo" class="logo" />
+
+        <span class="uni-name">BUETK</span>
+
+      </a>
+
+  
+
+      <!-- Hamburger toggle for mobile -->
+
+      <button id="mobileNavToggle" class="hamburger">
+
+        <i class="fas fa-bars"></i>
+
+      </button>
+
+  
+
+      <nav>
+
+        <ul id="mobileNav" class="mobile-nav">
+
+          <li><a href="index.html">Home</a></li>
+
+          <li><a href="about.html">About</a></li>
+
+          <li><a href="programs.html">Programs</a></li>
+
+          <li><a href="admissions.html">Admissions</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+
+          
+
+         
+
+          
+
+          <li>
+
+            <button id="darkModeToggle" class="dark-toggle">
+
+              <i class="fas fa-moon"></i>
+
+            </button>
+
+        
+
+        </li>
+
+        
+
+        </ul>
+
+      
+
+      </nav>
+
+      <li id="authLinks">
+
+        <a href="login.html" class="btn" id="loginLink">Login</a>
+
+        <a href="signup.html" class="btn" id="signupLink" style="margin-left: 10px;">Signup</a>
+
+      </li>
+
+    </div>
+
+  </header>
+
+  
+
+
+  <section class="hero">
+
+    <div class="hero-content" data-aos="zoom-in">
+
+      <h1>Engineering Tomorrow’s Leaders</h1>
+
+      <p>At BUETK, we blend innovation, research, and community to empower every student.</p>
+
+      <a href="about.html" class="btn">Learn More</a>
+
+    </div>
+
+
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+
+      <path fill="#f9f9f9" d="M0,288L48,272C96,256,192,224,288,218.7C384,213,480,235,576,229.3C672,224,768,192,864,165.3C960,139,1056,117,1152,144C1248,171,1344,245,1392,282.7L1440,320L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+
+    </svg>
+
+  </section>
+
+
+
+  <section class="programs" data-aos="fade-up">
+
+    <h2>Our Top Programs</h2>
+
+    <div class="programs-grid">
+
+      <div class="program-card">
+
+        <i class="fas fa-laptop-code fa-2x"></i>
+
+        <h3>Computer Science</h3>
+
+        <p>AI, Cybersecurity, Data Science & more—build the future of technology.</p>
+
+      </div>
+
+      <div class="program-card">
+
+        <i class="fas fa-bolt fa-2x"></i>
+
+        <h3>Electrical Engineering</h3>
+
+        <p>Power systems, Robotics, Embedded Systems & cutting-edge electronics.</p>
+
+      </div>
+
+      <div class="program-card">
+
+        <i class="fas fa-building fa-2x"></i>
+
+        <h3>Civil Engineering</h3>
+
+        <p>Infrastructure, Urban Design, Geotechnical expertise shaping tomorrow’s cities.</p>
+
+      </div>
+
+      <div class="program-card">
+
+        <i class="fas fa-cogs fa-2x"></i>
+
+        <h3>Mechanical Engineering</h3>
+
+        <p>Thermodynamics, Advanced Manufacturing & sustainable design solutions.</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="testimonials" data-aos="fade-up">
+
+    <h2>What Our Students Say</h2>
+
+    <div class="slider">
+
+      <div class="testimonial">
+
+        <p>“BUETK gave me the hands-on experience I needed to land my dream job in cybersecurity.”</p>
+
+        <h4>— Ayesha Khan, Class of 2024</h4>
+
+      </div>
+
+      <div class="testimonial">
+
+        <p>“The support and mentorship here are unparalleled. I’ve grown so much academically and personally.”</p>
+
+        <h4>— Bilal Ahmed, Class of 2023</h4>
+
+      </div>
+
+      <div class="testimonial">
+
+        <p>“From labs to lectures, every resource at BUETK pushed me to excel in mechanical design.”</p>
+
+        <h4>— Fatima Ali, Class of 2025</h4>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GALLERY -->
+
+  <section class="gallery" data-aos="fade-up">
+
+    <h2>Campus Life</h2>
+
+    <div class="gallery-grid">
+
+      <img src="Hostels.png" alt="Campus View" />
+
+      <img src="210214241_1739765409541116_7190939431455774788_n.jpg" alt="Students in Lab" />
+
+      <img src="Untitled.jpeg" alt="Cultural Event" />
+
+      <img src="images.png" alt="Lecture Hall" />
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer data-aos="fade-up">
+
+    <div class="footer-container">
+
+      <p>Kahtan Khuzdar, Balochistan | +123 456 7890</p>
+
+      <div class="social">
+
+        <a href="#"><i class="fab fa-facebook"></i></a>
+
+        <a href="#"><i class="fab fa-twitter"></i></a>
+
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+
+      </div>
+
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch | Moiz Kurd | Mutablib Baloch</p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- SCRIPTS -->
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="Script.js"></script>
+
+  <script> AOS.init({ duration: 800, once: true }); </script>
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BUETK - Login</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="Style.css">
+
+</head>
+
+<body>
+
+  <!-- Header -->
+
+  <header>
+
+    <div class="header-container">
+
+      <a href="index.html" class="logo-container">
+
+        <img src="images.png" alt="BUETK Logo" class="logo">
+
+        <span class="uni-name">BUETK</span>
+
+      </a>
+
+      
+
+      <button id="mobileNavToggle" class="hamburger">
+
+        <i class="fas fa-bars"></i>
+
+      </button>
+
+      
+
+      <nav>
+
+        <ul id="mobileNav">
+
+          <li><a href="index.html">Home</a></li>
+
+          <li><a href="about.html">About</a></li>
+
+          <li><a href="programs.html">Programs</a></li>
+
+          <li><a href="admissions.html">Admissions</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+
+          <li class="auth-links">
+
+            <a href="login.html" class="btn active">Login</a>
+
+            <button id="darkModeToggle" class="dark-toggle">
+
+              <i class="fas fa-moon"></i>
+
+            </button>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- Main Content -->
+
+  <div class="auth-container">
+
+    <div class="container">
+
+      <div class="auth-form-container">
+
+        <div class="auth-form-header">
+
+          <h2>Welcome Back</h2>
+
+          <p>Sign in to access your account</p>
+
+        </div>
+
+        
+
+        <form id="loginForm">
+
+          <div class="form-group">
+
+            <label for="email">University Email</label>
+
+            <input type="email" id="email" placeholder="example@buetk.edu.pk" required>
+
+          </div>
+
+          
+
+          <div class="form-group">
+
+            <label for="password">Password</label>
+
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <button type="button" class="password-toggle" id="passwordToggle">
+
+              <i class="fas fa-eye"></i>
+
+            </button>
+
+          </div>
+
+          
+
+          <a href="#" class="forgot-password">Forgot Password?</a>
+
+          
+
+          <button type="submit" class="btn btn-primary">Login to Account</button>
+
+          <p id="formMessage"></p>
+
+        </form>
+
+        
+
+        <div class="login-info">
+
+          <h3>Login Instructions:</h3>
+
+          <ul>
+
+            <li><strong>Students:</strong> Use your student email and password</li>
+
+            <li><strong>Administrators:</strong> Use admin credentials</li>
+
+            <li><strong>Faculty:</strong> Use your faculty email and password</li>
+
+            <li>You'll be redirected automatically to the appropriate dashboard</li>
+
+          </ul>
+
+          
+
+          <div class="role-indicator">
+
+            <span id="roleIndicator">Logging in as: Student</span>
+
+          </div>
+
+        </div>
+
+        
+
+        <div class="auth-footer">
+
+          <p>Don't have an account? <a href="signup.html">Create one now</a></p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Footer -->
+
+  <footer>
+
+    <div class="footer-container">
+
+      <p>Kahtan Khuzdar, Balochistan | +123 456 7890</p>
+
+      
+
+      <div class="social">
+
+        <a href="#"><i class="fab fa-facebook"></i></a>
+
+        <a href="#"><i class="fab fa-twitter"></i></a>
+
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+
+        <a href="#"><i class="fab fa-instagram"></i></a>
+
+        <a href="#"><i class="fab fa-youtube"></i></a>
+
+      </div>
+
+      
+
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+  const loginForm = document.getElementById('loginForm');
+
+  if (loginForm) {
+
+    loginForm.addEventListener('submit', async (e) => {
+
+      e.preventDefault();
+
+
+      const email = document.getElementById('email').value;
+
+      const password = document.getElementById('password').value;
+
+      const msg = document.getElementById('formMessage');
+
+      msg.textContent = 'Authenticating...';
+
+      msg.style.color = 'blue';
+
+
+      try {
+
+        const res = await fetch('http://localhost:5000/api/student/login', {
+
+          method: 'POST',
+
+          headers: { 'Content-Type': 'application/json' },
+
+          body: JSON.stringify({ email, password })
+
+        });
+
+
+        const data = await res.json();
+
+
+        if (res.ok) {
+
+          localStorage.setItem('token', data.token);
+
+          localStorage.setItem('userId', data.userId);
+
+
+          msg.textContent = 'Login successful! Redirecting...';
+
+          msg.style.color = 'green';
+
+
+          setTimeout(() => {
+
+            window.location.href = 'dashboard.html';
+
+          }, 1000);
+
+        } else {
+
+          msg.textContent = data.error || 'Login failed';
+
+          msg.style.color = 'red';
+
+        }
+
+      } catch (error) {
+
+        console.error('Login error:', error);
+
+        msg.textContent = 'An error occurred during login';
+
+        msg.style.color = 'red';
+
+      }
+
+    });
+
+  }
+
+});
+
+
+  </script>
+
+</body>
+
+</html>
+
+<!-- WEBSITE_PROJ/public/programs.html -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Programs – BUETK</title>
+
+
+  <!-- Google Fonts & Icons -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+
+  <!-- AOS -->
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+  <!-- Main CSS -->
+
+  <link rel="stylesheet" href="Style.css"/>
+
+</head>
+
+<body>
+
+
+  <header data-aos="fade-down">
+
+    <div class="header-container">
+
+      <a href="index.html" class="logo-container">
+
+        <img src="images.png" alt="BUETK Logo" class="logo" />
+
+        <span class="uni-name">BUETK</span>
+
+      </a>
+
+  
+
+      <!-- Hamburger toggle for mobile -->
+
+      <button id="mobileNavToggle" class="hamburger">
+
+        <i class="fas fa-bars"></i>
+
+      </button>
+
+  
+
+      <nav>
+
+        <ul id="mobileNav" class="mobile-nav">
+
+          <li><a href="index.html">Home</a></li>
+
+          <li><a href="about.html">About</a></li>
+
+          <li><a href="programs.html">Programs</a></li>
+
+          <li><a href="admissions.html">Admissions</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+
+          
+
+         
+
+          
+
+          <li>
+
+            <button id="darkModeToggle" class="dark-toggle">
+
+              <i class="fas fa-moon"></i>
+
+            </button>
+
+        
+
+        </li>
+
+        
+
+        </ul>
+
+      
+
+      </nav>
+
+      <li id="authLinks">
+
+        <a href="login.html" class="btn" id="loginLink">Login</a>
+
+        <a href="signup.html" class="btn" id="signupLink" style="margin-left: 10px;">Signup</a>
+
+      </li>
+
+    </div>
+
+  </header>
+
+      
+
+
+  <!-- HERO -->
+
+  <section class="hero" style="clip-path: polygon(0 0,100% 0,100% 85%,0 100%);" data-aos="zoom-in">
+
+    <div class="hero-content">
+
+      <h1>Our Academic Programs</h1>
+
+      <p>Explore our diverse undergraduate and graduate offerings designed for 21st-century challenges.</p>
+
+    </div>
+
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+
+      <path fill="#ffffff" d="M0,288L48,272C96,256,192,224,288,218.7C384,213,480,235,576,229.3C672,224,768,192,864,165.3C960,139,1056,117,1152,144C1248,171,1344,245,1392,282.7L1440,320L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+
+    </svg>
+
+  </section>
+
+
+  <!-- PROGRAMS GRID -->
+
+  <section class="programs" data-aos="fade-up">
+
+    <div class="programs-grid">
+
+      <div class="program-card">
+
+        <i class="fas fa-laptop-code fa-2x"></i>
+
+        <h3>BS Computer Science</h3>
+
+        <p>AI, Machine Learning, Cybersecurity, Data Science, Software Engineering.</p>
+
+      </div>
+
+      <div class="program-card">
+
+        <i class="fas fa-bolt fa-2x"></i>
+
+        <h3>BS Electrical Engineering</h3>
+
+        <p>Power Systems, Renewable Energy, Electronics, Robotics, Embedded Systems.</p>
+
+      </div>
+
+      <div class="program-card">
+
+        <i class="fas fa-building fa-2x"></i>
+
+        <h3>BS Civil Engineering</h3>
+
+        <p>Structural Engineering, Geotechnical Analysis, Infrastructure Planning, Transportation.</p>
+
+      </div>
+
+      <div class="program-card">
+
+        <i class="fas fa-cogs fa-2x"></i>
+
+        <h3>BS Mechanical Engineering</h3>
+
+        <p>Thermodynamics, Fluid Mechanics, Manufacturing, Automotive, Aerospace Design.</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer data-aos="fade-up">
+
+    <div class="footer-container">
+
+      <p>Kahtan Khuzdar, Balochistan | +123 456 7890</p>
+
+      <div class="social">
+
+        <a href="#"><i class="fab fa-facebook"></i></a>
+
+        <a href="#"><i class="fab fa-twitter"></i></a>
+
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+
+      </div>
+
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- SCRIPTS -->
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="Script.js"></script>
+
+  <script> AOS.init({ duration: 800, once: true }); </script>
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>My Results</title>
+
+  <link rel="stylesheet" href="Style.css">
+
+  <script src="Public/utils/js/results.js" defer></script>
+
+</head>
+
+<body>
+
+
+  <div id="header"></div>
+
+
+  <h1>Your Academic Results</h1>
+
+  <div id="resultsList">
+
+    <p>Loading your results...</p>
+
+  </div>
+
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BUETK - Authentication</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+
+  <style>
+
+    /* ===================== */
+
+    /* GLOBAL STYLES */
+
+    /* ===================== */
+
+    :root {
+
+      --primary: #004080;
+
+      --secondary: #ffcc00;
+
+      --accent: #0066cc;
+
+      --light-bg: #f9f9f9;
+
+      --dark-bg: #121212;
+
+      --text-dark: #333333;
+
+      --text-light: #fafafa;
+
+      --card-bg: #ffffff;
+
+      --card-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+      --border-radius: 12px;
+
+      --transition: all 0.3s ease-out;
+
+      --font-main: 'Poppins', sans-serif;
+
+    }
+
+
+    * {
+
+      margin: 0;
+
+      padding: 0;
+
+      box-sizing: border-box;
+
+    }
+
+
+    body {
+
+      font-family: var(--font-main);
+
+      background-color: var(--light-bg);
+
+      color: var(--text-dark);
+
+      overflow-x: hidden;
+
+      line-height: 1.6;
+
+    }
+
+
+    body.dark {
+
+      background-color: var(--dark-bg);
+
+      color: var(--text-light);
+
+    }
+
+
+    .container {
+
+      width: 100%;
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      padding: 0 1.5rem;
+
+    }
+
+
+    .btn {
+
+      display: inline-block;
+
+      padding: 0.9rem 2.2rem;
+
+      background: var(--secondary);
+
+      color: var(--text-dark);
+
+      border-radius: 50px;
+
+      font-weight: 600;
+
+      transition: var(--transition);
+
+      cursor: pointer;
+
+      text-decoration: none;
+
+      border: none;
+
+      font-size: 1rem;
+
+      box-shadow: 0 4px 12px rgba(255, 204, 0, 0.25);
+
+    }
+
+
+    .btn:hover {
+
+      background: #ffd633;
+
+      transform: translateY(-3px);
+
+      box-shadow: 0 6px 15px rgba(255, 204, 0, 0.35);
+
+    }
+
+
+    .btn-primary {
+
+      background: var(--primary);
+
+      color: white;
+
+      box-shadow: 0 4px 12px rgba(0, 64, 128, 0.25);
+
+    }
+
+
+    .btn-primary:hover {
+
+      background: #003366;
+
+      box-shadow: 0 6px 15px rgba(0, 64, 128, 0.35);
+
+    }
+
+
+    /* ===================== */
+
+    /* HEADER STYLES */
+
+    /* ===================== */
+
+    header {
+
+      position: sticky;
+
+      top: 0;
+
+      background: rgba(255, 255, 255, 0.95);
+
+      backdrop-filter: blur(10px);
+
+      z-index: 1000;
+
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+
+      transition: var(--transition);
+
+    }
+
+
+    body.dark header {
+
+      background: rgba(18, 18, 18, 0.95);
+
+    }
+
+
+    .header-container {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      padding: 1rem 1.5rem;
+
+      max-width: 1400px;
+
+      margin: 0 auto;
+
+    }
+
+
+    .logo-container {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 0.8rem;
+
+      text-decoration: none;
+
+    }
+
+
+    .logo {
+
+      height: 50px;
+
+      width: 50px;
+
+      border-radius: 50%;
+
+      object-fit: cover;
+
+      border: 2px solid var(--primary);
+
+    }
+
+
+    .uni-name {
+
+      font-size: 1.6rem;
+
+      font-weight: 700;
+
+      color: var(--primary);
+
+    }
+
+
+    nav ul {
+
+      display: flex;
+
+      list-style: none;
+
+      gap: 1.8rem;
+
+    }
+
+
+    nav a {
+
+      color: var(--text-dark);
+
+      text-decoration: none;
+
+      font-weight: 500;
+
+      font-size: 1.05rem;
+
+      position: relative;
+
+      padding: 0.5rem 0;
+
+      transition: var(--transition);
+
+    }
+
+
+    body.dark nav a {
+
+      color: var(--text-light);
+
+    }
+
+
+    nav a::after {
+
+      content: '';
+
+      position: absolute;
+
+      bottom: 0;
+
+      left: 0;
+
+      width: 0;
+
+      height: 3px;
+
+      background: var(--secondary);
+
+      border-radius: 2px;
+
+      transition: var(--transition);
+
+    }
+
+
+    nav a:hover::after,
+
+    nav a.active::after {
+
+      width: 100%;
+
+    }
+
+
+    nav a:hover,
+
+    nav a.active {
+
+      color: var(--primary);
+
+    }
+
+
+    body.dark nav a:hover,
+
+    body.dark nav a.active {
+
+      color: var(--secondary);
+
+    }
+
+
+    .auth-links {
+
+      display: flex;
+
+      gap: 1rem;
+
+      align-items: center;
+
+    }
+
+
+    .dark-toggle {
+
+      background: none;
+
+      border: none;
+
+      font-size: 1.3rem;
+
+      cursor: pointer;
+
+      color: var(--primary);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      width: 40px;
+
+      height: 40px;
+
+      border-radius: 50%;
+
+      transition: var(--transition);
+
+    }
+
+
+    .dark-toggle:hover {
+
+      background: rgba(0, 64, 128, 0.1);
+
+    }
+
+
+    body.dark .dark-toggle {
+
+      color: var(--secondary);
+
+    }
+
+
+    .hamburger {
+
+      display: none;
+
+      background: none;
+
+      border: none;
+
+      font-size: 1.8rem;
+
+      color: var(--primary);
+
+      cursor: pointer;
+
+      z-index: 1001;
+
+    }
+
+
+    /* ===================== */
+
+    /* AUTHENTICATION PAGES */
+
+    /* ===================== */
+
+    .auth-container {
+
+      min-height: calc(100vh - 80px);
+
+      display: flex;
+
+      align-items: center;
+
+      padding: 2rem 1.5rem;
+
+      background: linear-gradient(135deg, rgba(0, 64, 128, 0.05), rgba(255, 204, 0, 0.05));
+
+    }
+
+
+    body.dark .auth-container {
+
+      background: linear-gradient(135deg, rgba(0, 64, 128, 0.1), rgba(255, 204, 0, 0.1));
+
+    }
+
+
+    .auth-form-container {
+
+      width: 100%;
+
+      max-width: 500px;
+
+      margin: 0 auto;
+
+      background: var(--card-bg);
+
+      padding: 3rem;
+
+      border-radius: var(--border-radius);
+
+      box-shadow: var(--card-shadow);
+
+      position: relative;
+
+      overflow: hidden;
+
+    }
+
+
+    body.dark .auth-form-container {
+
+      background: rgba(34, 34, 34, 0.7);
+
+    }
+
+
+    .auth-form-container::before {
+
+      content: '';
+
+      position: absolute;
+
+      top: 0;
+
+      left: 0;
+
+      width: 100%;
+
+      height: 5px;
+
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+
+    }
+
+
+    .auth-form-header {
+
+      text-align: center;
+
+      margin-bottom: 2.5rem;
+
+    }
+
+
+    .auth-form-header h2 {
+
+      color: var(--primary);
+
+      font-size: 2.2rem;
+
+      margin-bottom: 0.5rem;
+
+    }
+
+
+    body.dark .auth-form-header h2 {
+
+      color: var(--secondary);
+
+    }
+
+
+    .auth-form-header p {
+
+      color: var(--text-dark);
+
+      font-size: 1.1rem;
+
+      opacity: 0.8;
+
+    }
+
+
+    body.dark .auth-form-header p {
+
+      color: var(--text-light);
+
+    }
+
+
+    .form-group {
+
+      margin-bottom: 1.8rem;
+
+      position: relative;
+
+    }
+
+
+    .form-group label {
+
+      display: block;
+
+      margin-bottom: 0.7rem;
+
+      font-weight: 500;
+
+      color: var(--primary);
+
+    }
+
+
+    body.dark .form-group label {
+
+      color: var(--secondary);
+
+    }
+
+
+    .form-group input,
+
+    .form-group select {
+
+      width: 100%;
+
+      padding: 1rem 1.2rem;
+
+      border: 2px solid #e1e1e1;
+
+      border-radius: 8px;
+
+      font-size: 1rem;
+
+      font-family: var(--font-main);
+
+      transition: var(--transition);
+
+    }
+
+
+    body.dark .form-group input,
+
+    body.dark .form-group select {
+
+      background: rgba(50, 50, 50, 0.5);
+
+      border-color: #444;
+
+      color: white;
+
+    }
+
+
+    .form-group input:focus,
+
+    .form-group select:focus {
+
+      outline: none;
+
+      border-color: var(--primary);
+
+      box-shadow: 0 0 0 3px rgba(0, 64, 128, 0.2);
+
+    }
+
+
+    .password-toggle {
+
+      position: absolute;
+
+      right: 15px;
+
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      background: none;
+
+      border: none;
+
+      color: #777;
+
+      cursor: pointer;
+
+    }
+
+
+    body.dark .password-toggle {
+
+      color: #aaa;
+
+    }
+
+
+    .auth-form-container .btn {
+
+      width: 100%;
+
+      margin-top: 0.5rem;
+
+      font-size: 1.1rem;
+
+      padding: 1rem;
+
+    }
+
+
+    .auth-footer {
+
+      text-align: center;
+
+      margin-top: 2rem;
+
+      padding-top: 1.5rem;
+
+      border-top: 1px solid #eee;
+
+    }
+
+
+    body.dark .auth-footer {
+
+      border-top-color: #333;
+
+    }
+
+
+    .auth-footer p {
+
+      color: var(--text-dark);
+
+    }
+
+
+    body.dark .auth-footer p {
+
+      color: var(--text-light);
+
+    }
+
+
+    .auth-footer a {
+
+      color: var(--primary);
+
+      font-weight: 600;
+
+      text-decoration: none;
+
+      transition: var(--transition);
+
+    }
+
+
+    body.dark .auth-footer a {
+
+      color: var(--secondary);
+
+    }
+
+
+    .auth-footer a:hover {
+
+      color: var(--accent);
+
+      text-decoration: underline;
+
+    }
+
+
+    .login-info {
+
+      margin-top: 2.5rem;
+
+      padding: 1.8rem;
+
+      background: rgba(0, 64, 128, 0.05);
+
+      border-radius: var(--border-radius);
+
+    }
+
+
+    body.dark .login-info {
+
+      background: rgba(0, 64, 128, 0.15);
+
+    }
+
+
+    .login-info h3 {
+
+      color: var(--primary);
+
+      font-size: 1.2rem;
+
+      margin-bottom: 1.2rem;
+
+    }
+
+
+    body.dark .login-info h3 {
+
+      color: var(--secondary);
+
+    }
+
+
+    .login-info ul {
+
+      padding-left: 1.2rem;
+
+      margin-bottom: 1.5rem;
+
+    }
+
+
+    .login-info li {
+
+      margin-bottom: 0.8rem;
+
+      font-size: 0.95rem;
+
+    }
+
+
+    .role-indicator {
+
+      text-align: center;
+
+      font-weight: 600;
+
+      padding: 0.8rem;
+
+      border-radius: 8px;
+
+      background: rgba(0, 64, 128, 0.1);
+
+      color: var(--primary);
+
+      border: 2px dashed var(--secondary);
+
+    }
+
+
+    body.dark .role-indicator {
+
+      background: rgba(0, 64, 128, 0.2);
+
+      color: var(--secondary);
+
+    }
+
+
+    /* ===================== */
+
+    /* FOOTER STYLES */
+
+    /* ===================== */
+
+    footer {
+
+      background: var(--primary);
+
+      color: white;
+
+      padding: 3rem 1.5rem 2rem;
+
+    }
+
+
+    .footer-container {
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      text-align: center;
+
+    }
+
+
+    footer .social {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 1.5rem;
+
+      margin: 1.5rem 0;
+
+    }
+
+
+    footer .social a {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      width: 45px;
+
+      height: 45px;
+
+      border-radius: 50%;
+
+      background: rgba(255, 255, 255, 0.1);
+
+      color: white;
+
+      font-size: 1.2rem;
+
+      transition: var(--transition);
+
+    }
+
+
+    footer .social a:hover {
+
+      background: var(--secondary);
+
+      transform: translateY(-3px);
+
+      color: var(--primary);
+
+    }
+
+
+    .credits {
+
+      font-size: 0.95rem;
+
+      color: rgba(255, 255, 255, 0.8);
+
+      margin-top: 1.5rem;
+
+      padding-top: 1.5rem;
+
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    }
+
+
+    /* ===================== */
+
+    /* RESPONSIVE STYLES */
+
+    /* ===================== */
+
+    @media (max-width: 768px) {
+
+      .hamburger {
+
+        display: block;
+
+      }
+
+      
+
+      nav ul {
+
+        position: fixed;
+
+        top: 0;
+
+        right: 0;
+
+        width: 280px;
+
+        height: 100vh;
+
+        background: var(--light-bg);
+
+        flex-direction: column;
+
+        padding: 6rem 2rem 2rem;
+
+        transform: translateX(100%);
+
+        transition: var(--transition);
+
+        z-index: 999;
+
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+
+      }
+
+      
+
+      body.dark nav ul {
+
+        background: var(--dark-bg);
+
+      }
+
+      
+
+      nav ul.show {
+
+        transform: translateX(0);
+
+      }
+
+      
+
+      .auth-links {
+
+        flex-direction: column;
+
+        gap: 0.5rem;
+
+        margin-top: 1rem;
+
+      }
+
+      
+
+      .auth-form-container {
+
+        padding: 2.5rem 1.5rem;
+
+      }
+
+    }
+
+
+    @media (max-width: 480px) {
+
+      .auth-form-header h2 {
+
+        font-size: 1.8rem;
+
+      }
+
+      
+
+      .header-container {
+
+        padding: 1rem;
+
+      }
+
+      
+
+      .uni-name {
+
+        font-size: 1.4rem;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Header -->
+
+  <header>
+
+    <div class="header-container">
+
+      <a href="index.html" class="logo-container">
+
+        <img src="images.png" alt="BUETK Logo" class="logo">
+
+        <span class="uni-name">BUETK</span>
+
+      </a>
+
+      
+
+      <button id="mobileNavToggle" class="hamburger">
+
+        <i class="fas fa-bars"></i>
+
+      </button>
+
+      
+
+      <nav>
+
+        <ul id="mobileNav">
+
+          <li><a href="index.html">Home</a></li>
+
+          <li><a href="about.html">About</a></li>
+
+          <li><a href="programs.html">Programs</a></li>
+
+          <li><a href="admissions.html">Admissions</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+
+          <li class="auth-links">
+
+            <a href="login.html" class="btn">Login</a>
+
+            <button id="darkModeToggle" class="dark-toggle">
+
+              <i class="fas fa-moon"></i>
+
+            </button>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- Main Content -->
+
+  <div class="auth-container">
+
+    <div class="container">
+
+      <div class="auth-form-container">
+
+        <div class="auth-form-header">
+
+          <h2>Create Your Account</h2>
+
+          <p>Join the BUETK community today</p>
+
+        </div>
+
+        
+
+        <form id="signupForm">
+
+          <div class="form-group">
+
+            <label for="name">Full Name</label>
+
+            <input type="text" id="name" placeholder="Enter your full name" required>
+
+          </div>
+
+          
+
+          <div class="form-group">
+
+            <label for="email">University Email</label>
+
+            <input type="email" id="email" placeholder="example@buetk.edu.pk" required>
+
+          </div>
+
+          
+
+          <div class="form-group">
+
+            <label for="password">Password</label>
+
+            <input type="password" id="password" placeholder="Create a strong password" required>
+
+            <button type="button" class="password-toggle" id="passwordToggle">
+
+              <i class="fas fa-eye"></i>
+
+            </button>
+
+          </div>
+
+          
+
+          <div class="form-group">
+
+            <label for="role">Account Type</label>
+
+            <select id="role" required>
+
+              <option value="" disabled selected>Select your role</option>
+
+              <option value="student">Student</option>
+
+              <option value="admin">Administrator</option>
+
+              <option value="faculty">Faculty Member</option>
+
+            </select>
+
+          </div>
+
+          
+
+          <button type="submit" class="btn btn-primary">Create Account</button>
+
+          <p id="formMessage"></p>
+
+        </form>
+
+        
+
+        <div class="auth-footer">
+
+          <p>Already have an account? <a href="login.html">Log in here</a></p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Footer -->
+
+  <footer>
+
+    <div class="footer-container">
+
+      <p>Kahtan Khuzdar, Balochistan | +123 456 7890</p>
+
+      
+
+      <div class="social">
+
+        <a href="#"><i class="fab fa-facebook"></i></a>
+
+        <a href="#"><i class="fab fa-twitter"></i></a>
+
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+
+        <a href="#"><i class="fab fa-instagram"></i></a>
+
+        <a href="#"><i class="fab fa-youtube"></i></a>
+
+      </div>
+
+      
+
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    // Initialize when DOM is loaded
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // Mobile Navigation Toggle
+
+      const mobileToggle = document.getElementById('mobileNavToggle');
+
+      const mobileNav = document.getElementById('mobileNav');
+
+      
+
+      if (mobileToggle && mobileNav) {
+
+        mobileToggle.addEventListener('click', () => {
+
+          mobileNav.classList.toggle('show');
+
+          document.body.classList.toggle('mobile-nav-open');
+
+        });
+
+        
+
+        // Close menu when clicking outside
+
+        document.addEventListener('click', (e) => {
+
+          if (!e.target.closest('#mobileNav') && 
+
+              !e.target.closest('#mobileNavToggle') &&
+
+              mobileNav.classList.contains('show')) {
+
+            mobileNav.classList.remove('show');
+
+            document.body.classList.remove('mobile-nav-open');
+
+          }
+
+        });
+
+      }
+
+      
+
+      // Dark Mode Toggle
+
+      const darkToggle = document.getElementById('darkModeToggle');
+
+      if (darkToggle) {
+
+        darkToggle.addEventListener('click', () => {
+
+          document.body.classList.toggle('dark');
+
+          localStorage.setItem('darkMode', document.body.classList.contains('dark'));
+
+          
+
+          // Update button icon
+
+          const icon = darkToggle.querySelector('i');
+
+          if (document.body.classList.contains('dark')) {
+
+            icon.classList.replace('fa-moon', 'fa-sun');
+
+          } else {
+
+            icon.classList.replace('fa-sun', 'fa-moon');
+
+          }
+
+        });
+
+        
+
+        // Apply saved preference
+
+        if (localStorage.getItem('darkMode') === 'true') {
+
+          document.body.classList.add('dark');
+
+          const icon = darkToggle.querySelector('i');
+
+          icon.classList.replace('fa-moon', 'fa-sun');
+
+        }
+
+      }
+
+      
+
+      // Password visibility toggle
+
+      const passwordToggle = document.getElementById('passwordToggle');
+
+      if (passwordToggle) {
+
+        passwordToggle.addEventListener('click', () => {
+
+          const passwordInput = document.getElementById('password');
+
+          const icon = passwordToggle.querySelector('i');
+
+          
+
+          if (passwordInput.type === 'password') {
+
+            passwordInput.type = 'text';
+
+            icon.classList.replace('fa-eye', 'fa-eye-slash');
+
+          } else {
+
+            passwordInput.type = 'password';
+
+            icon.classList.replace('fa-eye-slash', 'fa-eye');
+
+          }
+
+        });
+
+      }
+
+      
+
+      // Form submission
+
+      const signupForm = document.getElementById('signupForm');
+
+      if (signupForm) {
+
+        signupForm.addEventListener('submit', (e) => {
+
+          e.preventDefault();
+
+          const msg = document.getElementById('formMessage');
+
+          msg.textContent = 'Creating your account...';
+
+          msg.style.color = 'var(--primary)';
+
+          
+
+          // Simulate account creation
+
+          setTimeout(() => {
+
+            msg.innerHTML = 'Account created successfully! <i class="fas fa-check-circle"></i>';
+
+            msg.style.color = 'green';
+
+            
+
+            // Redirect to login after 2 seconds
+
+            setTimeout(() => {
+
+              window.location.href = 'login.html';
+
+            }, 2000);
+
+          }, 1500);
+
+        });
+
+      }
+
+    });
+
+  </script>
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Timetable</title>
+
+  <link rel="stylesheet" href="Public/utils/css/timetable.css">
+
+  <script src="Public/utils/js/timetable.js" defer></script>
+
+</head>
+
+<body>
+
+
+  <div id="header"></div>
+
+
+  <h1>Your Weekly Timetable</h1>
+
+  <div id="timetable">
+
+    <p>Loading timetable...</p>
+
+  </div>
+
+
+</body>
+
+</html>
+
+// =====================
+
+// COMMON FUNCTIONALITY
+
+// =====================
+
+
+// Initialize when DOM is loaded
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Mobile Navigation Toggle
+
+  const mobileToggle = document.getElementById('mobileNavToggle');
+
+  const mobileNav = document.getElementById('mobileNav');
+
+  
+
+  if (mobileToggle && mobileNav) {
+
+    mobileToggle.addEventListener('click', () => {
+
+      mobileNav.classList.toggle('show');
+
+      document.body.classList.toggle('mobile-nav-open');
+
+    });
+
+    
+
+    // Close menu when clicking outside
+
+    document.addEventListener('click', (e) => {
+
+      if (!e.target.closest('#mobileNav') && 
+
+          !e.target.closest('#mobileNavToggle') &&
+
+          mobileNav.classList.contains('show')) {
+
+        mobileNav.classList.remove('show');
+
+        document.body.classList.remove('mobile-nav-open');
+
+      }
+
+    });
+
+  }
+
+  
+
+  // Dark Mode Toggle
+
+  const darkToggle = document.getElementById('darkModeToggle');
+
+  if (darkToggle) {
+
+    darkToggle.addEventListener('click', () => {
+
+      document.body.classList.toggle('dark');
+
+      localStorage.setItem('darkMode', document.body.classList.contains('dark'));
+
+      
+
+      // Update button icon
+
+      const icon = darkToggle.querySelector('i');
+
+      if (document.body.classList.contains('dark')) {
+
+        icon.classList.replace('fa-moon', 'fa-sun');
+
+      } else {
+
+        icon.classList.replace('fa-sun', 'fa-moon');
+
+      }
+
+    });
+
+    
+
+    // Apply saved preference
+
+    if (localStorage.getItem('darkMode') === 'true') {
+
+      document.body.classList.add('dark');
+
+      const icon = darkToggle.querySelector('i');
+
+      if (icon) {
+
+        icon.classList.replace('fa-moon', 'fa-sun');
+
+      }
+
+    }
+
+  }
+
+  
+
+  // Auth Links Management
+
+  updateAuthLinks();
+
+  
+
+  // Logout functionality
+
+  initLogout();
+
+  
+
+  // Password visibility toggle for signup page
+
+  setupPasswordToggle('passwordToggle', 'password');
+
+  
+
+  // Password visibility toggle for login page
+
+  setupPasswordToggle('loginPasswordToggle', 'loginPassword');
+
+  
+
+  // Initialize signup page if form exists
+
+  if (document.getElementById('signupForm')) {
+
+    initSignupPage();
+
+  }
+
+  
+
+  // Initialize login page if form exists
+
+  if (document.getElementById('loginForm')) {
+
+    initLoginPage();
+
+  }
+
+});
+
+
+// Update authentication links
+
+function updateAuthLinks() {
+
+  const authLinks = document.getElementById('authLinks');
+
+  const token = localStorage.getItem('token');
+
+  
+
+  if (!authLinks) return;
+
+  
+
+  if (token) {
+
+    authLinks.innerHTML = `
+
+      <a href="dashboard.html" class="btn">Dashboard</a>
+
+      <a href="#" id="logoutLink" class="btn" style="margin-left: 10px;">Logout</a>
+
+    `;
+
+  } else {
+
+    authLinks.innerHTML = `
+
+      <a href="login.html" class="btn" id="loginLink">Login</a>
+
+      <a href="signup.html" class="btn" id="signupLink" style="margin-left: 10px;">Signup</a>
+
+    `;
+
+  }
+
+}
+
+
+// Initialize logout functionality
+
+function initLogout() {
+
+  document.addEventListener('click', e => {
+
+    if (e.target && (e.target.id === 'logoutLink' || e.target.id === 'adminLogoutBtn' || e.target.id === 'logoutBtn')) {
+
+      e.preventDefault();
+
+      localStorage.removeItem('token');
+
+      localStorage.removeItem('userId');
+
+      updateAuthLinks();
+
+      window.location.href = 'index.html';
+
+    }
+
+  });
+
+}
+
+
+// Password visibility toggle (common function)
+
+function setupPasswordToggle(toggleId, inputId) {
+
+  const toggle = document.getElementById(toggleId);
+
+  const input = document.getElementById(inputId);
+
+  
+
+  if (toggle && input) {
+
+    toggle.addEventListener('click', () => {
+
+      const icon = toggle.querySelector('i');
+
+      if (input.type === 'password') {
+
+        input.type = 'text';
+
+        icon.classList.replace('fa-eye', 'fa-eye-slash');
+
+      } else {
+
+        input.type = 'password';
+
+        icon.classList.replace('fa-eye-slash', 'fa-eye');
+
+      }
+
+    });
+
+  }
+
+}
+
+
+// =====================
+
+// SIGNUP PAGE FUNCTIONALITY
+
+// =====================
+
+function initSignupPage() {
+
+  const signupForm = document.getElementById('signupForm');
+
+  
+
+  if (signupForm) {
+
+    signupForm.addEventListener('submit', (e) => {
+
+      e.preventDefault();
+
+      const msg = document.getElementById('formMessage');
+
+      msg.textContent = 'Creating your account...';
+
+      msg.style.color = 'var(--primary)';
+
+      
+
+      // Simulate account creation
+
+      setTimeout(() => {
+
+        msg.innerHTML = 'Account created successfully! <i class="fas fa-check-circle"></i>';
+
+        msg.style.color = 'green';
+
+        
+
+        // Redirect to login after 2 seconds
+
+        setTimeout(() => {
+
+          window.location.href = 'login.html';
+
+        }, 2000);
+
+      }, 1500);
+
+    });
+
+  }
+
+}
+
+function displayProfile(profile) {
+
+  document.getElementById('studentName').textContent = profile.name;
+
+  document.getElementById('profileName').textContent = profile.name;
+
+  document.getElementById('profileEmail').textContent = profile.email;
+
+
+  // Safely handle _id
+
+  if (profile._id && typeof profile._id === 'string') {
+
+    document.getElementById('profileId').textContent = profile._id.slice(-6).toUpperCase();
+
+  } else {
+
+    console.warn('Invalid or missing profile._id:', profile._id);
+
+    document.getElementById('profileId').textContent = 'UNKNOWN';
+
+  }
+
+
+  document.getElementById('profileDept').textContent = profile.department || 'Computer Science';
+
+
+  document.getElementById('editName').value = profile.name;
+
+  document.getElementById('editEmail').value = profile.email;
+
+  document.getElementById('editDepartment').value = profile.department || 'Computer Science';
+
+}
+
+
+// =====================
+
+// LOGIN PAGE FUNCTIONALITY
+
+// =====================
+
+function initLoginPage() {
+
+  const emailInput = document.getElementById('loginEmail');
+
+  const loginForm = document.getElementById('loginForm');
+
+  
+
+  // Role indicator based on email
+
+  if (emailInput) {
+
+    emailInput.addEventListener('blur', () => {
+
+      const email = emailInput.value;
+
+      const roleIndicator = document.getElementById('roleIndicator');
+
+      
+
+      if (email.includes('@admin.buetk.edu.pk')) {
+
+        roleIndicator.textContent = 'Logging in as: Administrator';
+
+        roleIndicator.style.color = '#cc0066';
+
+      } else if (email.includes('@faculty.buetk.edu.pk')) {
+
+        roleIndicator.textContent = 'Logging in as: Faculty Member';
+
+        roleIndicator.style.color = '#009900';
+
+      } else {
+
+        roleIndicator.textContent = 'Logging in as: Student';
+
+        roleIndicator.style.color = '#004080';
+
+      }
+
+    });
+
+  }
+
+  
+
+  // Form submission
+
+  if (loginForm) {
+
+    loginForm.addEventListener('submit', (e) => {
+
+      e.preventDefault();
+
+      const msg = document.getElementById('loginFormMessage');
+
+      msg.textContent = 'Authenticating...';
+
+      msg.style.color = 'var(--primary)';
+
+      
+
+      // Simulate authentication
+
+      setTimeout(() => {
+
+        const email = document.getElementById('loginEmail').value;
+
+        
+
+        if (email.includes('@admin')) {
+
+          msg.innerHTML = 'Redirecting to Admin Dashboard...';
+
+          setTimeout(() => {
+
+            window.location.href = 'admin.html';
+
+          }, 1000);
+
+        } else {
+
+          msg.innerHTML = 'Redirecting to Student Dashboard...';
+
+          setTimeout(() => {
+
+            window.location.href = 'dashboard.html';
+
+          }, 1000);
+
+        }
+
+      }, 1500);
+
+    });
+
+  }
+
+}// =====================
+
+// COMMON FUNCTIONALITY
+
+// =====================
+
+
+// Initialize when DOM is loaded
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Mobile Navigation Toggle
+
+  const mobileToggle = document.getElementById('mobileNavToggle');
+
+  const mobileNav = document.getElementById('mobileNav');
+
+  
+
+  if (mobileToggle && mobileNav) {
+
+    mobileToggle.addEventListener('click', () => {
+
+      mobileNav.classList.toggle('show');
+
+      document.body.classList.toggle('mobile-nav-open');
+
+    });
+
+    
+
+    // Close menu when clicking outside
+
+    document.addEventListener('click', (e) => {
+
+      if (!e.target.closest('#mobileNav') && 
+
+          !e.target.closest('#mobileNavToggle') &&
+
+          mobileNav.classList.contains('show')) {
+
+        mobileNav.classList.remove('show');
+
+        document.body.classList.remove('mobile-nav-open');
+
+      }
+
+    });
+
+  }
+
+  
+
+  // Dark Mode Toggle
+
+  const darkToggle = document.getElementById('darkModeToggle');
+
+  if (darkToggle) {
+
+    darkToggle.addEventListener('click', () => {
+
+      document.body.classList.toggle('dark');
+
+      localStorage.setItem('darkMode', document.body.classList.contains('dark'));
+
+      
+
+      // Update button icon
+
+      const icon = darkToggle.querySelector('i');
+
+      if (document.body.classList.contains('dark')) {
+
+        icon.classList.replace('fa-moon', 'fa-sun');
+
+      } else {
+
+        icon.classList.replace('fa-sun', 'fa-moon');
+
+      }
+
+    });
+
+    
+
+    // Apply saved preference
+
+    if (localStorage.getItem('darkMode') === 'true') {
+
+      document.body.classList.add('dark');
+
+      const icon = darkToggle.querySelector('i');
+
+      if (icon) {
+
+        icon.classList.replace('fa-moon', 'fa-sun');
+
+      }
+
+    }
+
+  }
+
+  
+
+  // Auth Links Management
+
+  updateAuthLinks();
+
+  
+
+  // Logout functionality
+
+  initLogout();
+
+  
+
+  // Password visibility toggle for signup page
+
+  setupPasswordToggle('passwordToggle', 'password');
+
+  
+
+  // Password visibility toggle for login page
+
+  setupPasswordToggle('loginPasswordToggle', 'loginPassword');
+
+  
+
+  // Initialize signup page if form exists
+
+  if (document.getElementById('signupForm')) {
+
+    initSignupPage();
+
+  }
+
+  
+
+  // Initialize login page if form exists
+
+  if (document.getElementById('loginForm')) {
+
+    initLoginPage();
+
+  }
+
+});
+
+
+// Update authentication links
+
+function updateAuthLinks() {
+
+  const authLinks = document.getElementById('authLinks');
+
+  const token = localStorage.getItem('token');
+
+  
+
+  if (!authLinks) return;
+
+  
+
+  if (token) {
+
+    authLinks.innerHTML = `
+
+      <a href="dashboard.html" class="btn">Dashboard</a>
+
+      <a href="#" id="logoutLink" class="btn" style="margin-left: 10px;">Logout</a>
+
+    `;
+
+  } else {
+
+    authLinks.innerHTML = `
+
+      <a href="login.html" class="btn" id="loginLink">Login</a>
+
+      <a href="signup.html" class="btn" id="signupLink" style="margin-left: 10px;">Signup</a>
+
+    `;
+
+  }
+
+}
+
+
+// Initialize logout functionality
+
+function initLogout() {
+
+  document.addEventListener('click', e => {
+
+    if (e.target && (e.target.id === 'logoutLink' || e.target.id === 'adminLogoutBtn' || e.target.id === 'logoutBtn')) {
+
+      e.preventDefault();
+
+      localStorage.removeItem('token');
+
+      localStorage.removeItem('userId');
+
+      updateAuthLinks();
+
+      window.location.href = 'index.html';
+
+    }
+
+  });
+
+}
+
+
+// Password visibility toggle (common function)
+
+function setupPasswordToggle(toggleId, inputId) {
+
+  const toggle = document.getElementById(toggleId);
+
+  const input = document.getElementById(inputId);
+
+  
+
+  if (toggle && input) {
+
+    toggle.addEventListener('click', () => {
+
+      const icon = toggle.querySelector('i');
+
+      if (input.type === 'password') {
+
+        input.type = 'text';
+
+        icon.classList.replace('fa-eye', 'fa-eye-slash');
+
+      } else {
+
+        input.type = 'password';
+
+        icon.classList.replace('fa-eye-slash', 'fa-eye');
+
+      }
+
+    });
+
+  }
+
+}
+
+
+// =====================
+
+// SIGNUP PAGE FUNCTIONALITY
+
+// =====================
+
+function initSignupPage() {
+
+  const signupForm = document.getElementById('signupForm');
+
+  
+
+  if (signupForm) {
+
+    signupForm.addEventListener('submit', (e) => {
+
+      e.preventDefault();
+
+      const msg = document.getElementById('formMessage');
+
+      msg.textContent = 'Creating your account...';
+
+      msg.style.color = 'var(--primary)';
+
+      
+
+      // Simulate account creation
+
+      setTimeout(() => {
+
+        msg.innerHTML = 'Account created successfully! <i class="fas fa-check-circle"></i>';
+
+        msg.style.color = 'green';
+
+        
+
+        // Redirect to login after 2 seconds
+
+        setTimeout(() => {
+
+          window.location.href = 'login.html';
+
+        }, 2000);
+
+      }, 1500);
+
+    });
+
+  }
+
+}
+
+function displayProfile(profile) {
+
+  document.getElementById('studentName').textContent = profile.name;
+
+  document.getElementById('profileName').textContent = profile.name;
+
+  document.getElementById('profileEmail').textContent = profile.email;
+
+
+  // Safely handle _id
+
+  if (profile._id && typeof profile._id === 'string') {
+
+    document.getElementById('profileId').textContent = profile._id.slice(-6).toUpperCase();
+
+  } else {
+
+    console.warn('Invalid or missing profile._id:', profile._id);
+
+    document.getElementById('profileId').textContent = 'UNKNOWN';
+
+  }
+
+
+  document.getElementById('profileDept').textContent = profile.department || 'Computer Science';
+
+
+  document.getElementById('editName').value = profile.name;
+
+  document.getElementById('editEmail').value = profile.email;
+
+  document.getElementById('editDepartment').value = profile.department || 'Computer Science';
+
+}
+
+
+// =====================
+
+// LOGIN PAGE FUNCTIONALITY
+
+// =====================
+
+function initLoginPage() {
+
+  const emailInput = document.getElementById('loginEmail');
+
+  const loginForm = document.getElementById('loginForm');
+
+  
+
+  // Role indicator based on email
+
+  if (emailInput) {
+
+    emailInput.addEventListener('blur', () => {
+
+      const email = emailInput.value;
+
+      const roleIndicator = document.getElementById('roleIndicator');
+
+      
+
+      if (email.includes('@admin.buetk.edu.pk')) {
+
+        roleIndicator.textContent = 'Logging in as: Administrator';
+
+        roleIndicator.style.color = '#cc0066';
+
+      } else if (email.includes('@faculty.buetk.edu.pk')) {
+
+        roleIndicator.textContent = 'Logging in as: Faculty Member';
+
+        roleIndicator.style.color = '#009900';
+
+      } else {
+
+        roleIndicator.textContent = 'Logging in as: Student';
+
+        roleIndicator.style.color = '#004080';
+
+      }
+
+    });
+
+  }
+
+  
+
+  // Form submission
+
+  if (loginForm) {
+
+    loginForm.addEventListener('submit', (e) => {
+
+      e.preventDefault();
+
+      const msg = document.getElementById('loginFormMessage');
+
+      msg.textContent = 'Authenticating...';
+
+      msg.style.color = 'var(--primary)';
+
+      
+
+      // Simulate authentication
+
+      setTimeout(() => {
+
+        const email = document.getElementById('loginEmail').value;
+
+        
+
+        if (email.includes('@admin')) {
+
+          msg.innerHTML = 'Redirecting to Admin Dashboard...';
+
+          setTimeout(() => {
+
+            window.location.href = 'admin.html';
+
+          }, 1000);
+
+        } else {
+
+          msg.innerHTML = 'Redirecting to Student Dashboard...';
+
+          setTimeout(() => {
+
+            window.location.href = 'dashboard.html';
+
+          }, 1000);
+
+        }
+
+      }, 1500);
+
+    });
+
+  }
+
+}
+
+
+
+ THIS IS MY TOTAL FRONT END TAKE A CLOSE AND CAREFUL LOOK AT IT AND TELL ME ITS COMPLETE OR NOT OR SOMETHING IS MISSING AND ITS CONNECTION WITH BACKEND IS GOOD EVERYTHING IS PERFECT ? 
+I WANT FROM YOU THAT MAKE IT MORE AND MORE PERFECT AND WORKABLE AND CHECK FOR ADMIN CONTROLLES DASHBOARD ETC check the codes of everything perfectly

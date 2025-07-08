@@ -1,0 +1,102 @@
+<!-- WEBSITE_PROJ/public/contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – BUETK</title>
+
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="Style.css"/>
+</head>
+<body>
+
+  <header data-aos="fade-down">
+    <div class="header-container">
+      <a href="index.html" class="logo-container">
+        <img src="images.png" alt="BUETK Logo" class="logo" />
+        <span class="uni-name">BUETK</span>
+      </a>
+  
+      <!-- Hamburger toggle for mobile -->
+      <button id="mobileNavToggle" class="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <nav>
+        <ul id="mobileNav" class="mobile-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          
+         
+          
+          <li>
+            <button id="darkModeToggle" class="dark-toggle">
+              <i class="fas fa-moon"></i>
+            </button>
+        
+        </li>
+        
+        </ul>
+      
+      </nav>
+      <li id="authLinks">
+        <a href="login.html" class="btn" id="loginLink">Login</a>
+        <a href="signup.html" class="btn" id="signupLink" style="margin-left: 10px;">Signup</a>
+      </li>
+    </div>
+  </header>
+      
+
+  <!-- HERO -->
+  <section class="hero" style="clip-path: polygon(0 0,100% 0,100% 90%,0 100%);" data-aos="zoom-in">
+    <div class="hero-content">
+      <h1>Get in Touch</h1>
+      <p>Questions? Feedback? We’d love to hear from you.</p>
+    </div>
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#f9f9f9" d="M0,64L48,74.7C96,85,192,107,288,122.7C384,139,480,149,576,149.3C672,149,768,139,864,133.3C960,128,1056,128,1152,149.3C1248,171,1344,213,1392,234.7L1440,256L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+    </svg>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="contact" data-aos="fade-up">
+    <h2>Contact Us</h2>
+    <form class="contact-form" id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required/>
+      <input type="email" id="email" placeholder="Your Email" required/>
+      <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+      <p id="formMessage"></p>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer data-aos="fade-up">
+    <div class="footer-container">
+      <p>Kahtan Khuzdar, Balochistan | +123 456 7890</p>
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="Script.js"></script>
+  <script> AOS.init({ duration: 800, once: true }); </script>
+</body>
+</html>

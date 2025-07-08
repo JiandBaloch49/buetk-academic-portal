@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Assignments | University Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="utils/css/student-assignment.css">
+    <link rel="stylesheet" href="Style.css">
+    
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo-container">
+        <img src="images.png" alt="BUETK Logo" class="logo" />
+        <span class="uni-name">BUETK</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="results.html" class="active">Results</a></li>
+          <li><a href="resources.html">Resources</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <button id="darkModeToggle" class="dark-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="page-header">
+            <h1>Your Assignments</h1>
+            <p>View all your current and upcoming assignments. Track deadlines and submission status.</p>
+        </div>
+        
+        <div class="assignments-container">
+            <div id="assignmentsMessage">Loading your assignments...</div>
+            
+            <div class="assignments-filters">
+                <button class="filter-btn active">All Assignments</button>
+                <button class="filter-btn">Pending</button>
+                <button class="filter-btn">Submitted</button>
+                <button class="filter-btn">Overdue</button>
+                <button class="filter-btn">Upcoming</button>
+            </div>
+            
+            <div id="assignmentsList">
+                <!-- Assignment items will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <footer data-aos="fade-up">
+      <div class="footer-container">
+        <p>Kahtan Khuzdar, Balochistan | +123 456 7890</p>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+      </div>
+    </footer>
+
+    <script src="utils/js/student-assignments.js">
+        
+    </script>
+</body>
+</html>

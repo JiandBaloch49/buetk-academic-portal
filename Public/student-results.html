@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Academic Results - BUETK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="Style.css">
+  <style>
+
+    /* Main Content Styles */
+    
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    body.dark .page-header h1 {
+      color: var(--secondary);
+    }
+
+    .page-header p {
+      color: var(--text-dark);
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    body.dark .page-header p {
+      color: var(--text-light);
+    }
+
+    /* Summary Card */
+    .summary-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(5px);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+    }
+
+    body.dark .summary-card {
+      background: rgba(34, 34, 34, 0.7);
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .summary-item {
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      background: rgba(0, 64, 128, 0.05);
+      transition: var(--transition);
+    }
+
+    body.dark .summary-item {
+      background: rgba(0, 64, 128, 0.15);
+    }
+
+    .summary-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    body.dark .summary-item h3 {
+      color: var(--secondary);
+    }
+
+    .summary-value {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    body.dark .summary-value {
+      color: var(--secondary);
+    }
+
+    .summary-label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Results Container */
+    .results-container {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(5px);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+    }
+
+    body.dark .results-container {
+      background: rgba(34, 34, 34, 0.7);
+    }
+
+    .semester-selector {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .semester-btn {
+      padding: 0.8rem 1.5rem;
+      background: rgba(0, 64, 128, 0.1);
+      border: none;
+      border-radius: 30px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      color: var(--primary);
+    }
+
+    body.dark .semester-btn {
+      background: rgba(0, 64, 128, 0.2);
+      color: var(--secondary);
+    }
+
+    .semester-btn.active,
+    .semester-btn:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    body.dark .semester-btn.active,
+    body.dark .semester-btn:hover {
+      background: var(--secondary);
+      color: var(--text-dark);
+    }
+
+    /* Results Table */
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+    }
+
+    .results-table th {
+      background: var(--primary);
+      color: white;
+      text-align: left;
+      padding: 1rem;
+      font-weight: 500;
+    }
+
+    body.dark .results-table th {
+      background: rgba(0, 64, 128, 0.8);
+    }
+
+    .results-table td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark .results-table td {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .results-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .results-table tr:hover {
+      background: rgba(0, 64, 128, 0.05);
+    }
+
+    body.dark .results-table tr:hover {
+      background: rgba(0, 64, 128, 0.1);
+    }
+
+    .grade-cell {
+      font-weight: 600;
+    }
+
+    .grade-A { color: #27ae60; }
+    .grade-B { color: #2ecc71; }
+    .grade-C { color: #f39c12; }
+    .grade-D { color: #e67e22; }
+    .grade-F { color: #e74c3c; }
+
+    /* Download Button */
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    body.dark .download-btn {
+      background: var(--secondary);
+      color: var(--text-dark);
+    }
+
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Footer Styles */
+    footer {
+      background: var(--primary);
+      color: var(--text-light);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    footer .social {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    footer .social a {
+      color: var(--text-light);
+      font-size: 1.2rem;
+      transition: color var(--transition);
+    }
+
+    footer .social a:hover {
+      color: var(--secondary);
+    }
+
+    .credits {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      
+      nav ul {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .results-table {
+        display: block;
+        overflow-x: auto;
+      }
+      
+      .page-header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo-container">
+        <img src="images.png" alt="BUETK Logo" class="logo" />
+        <span class="uni-name">BUETK</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="results.html" class="active">Results</a></li>
+          <li><a href="resources.html">Resources</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <button id="darkModeToggle" class="dark-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>Your Academic Results</h1>
+      <p>View your semester-wise results and academic progress</p>
+    </div>
+    
+    <div class="summary-card">
+      <div class="summary-grid">
+        <div class="summary-item">
+          <h3>Current CGPA</h3>
+          <div class="summary-value">3.72</div>
+          <div class="summary-label">Out of 4.0 Scale</div>
+        </div>
+        
+        <div class="summary-item">
+          <h3>Total Credits</h3>
+          <div class="summary-value">96</div>
+          <div class="summary-label">Credits Completed</div>
+        </div>
+        
+        <div class="summary-item">
+          <h3>Current Semester</h3>
+          <div class="summary-value">Spring 2024</div>
+          <div class="summary-label">Semester GPA: 3.85</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="results-container">
+      <div class="semester-selector">
+        <button class="semester-btn active">Spring 2024</button>
+        <button class="semester-btn">Fall 2023</button>
+        <button class="semester-btn">Spring 2023</button>
+        <button class="semester-btn">Fall 2022</button>
+      </div>
+      
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Credit Hours</th>
+            <th>Grade</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CS-401</td>
+            <td>Advanced Algorithms</td>
+            <td>4</td>
+            <td class="grade-cell grade-A">A</td>
+            <td>4.00</td>
+          </tr>
+          <tr>
+            <td>CS-405</td>
+            <td>Database Systems</td>
+            <td>3</td>
+            <td class="grade-cell grade-A">A</td>
+            <td>4.00</td>
+          </tr>
+          <tr>
+            <td>CS-410</td>
+            <td>Software Engineering</td>
+            <td>3</td>
+            <td class="grade-cell grade-A">A</td>
+            <td>4.00</td>
+          </tr>
+          <tr>
+            <td>MATH-310</td>
+            <td>Numerical Analysis</td>
+            <td>3</td>
+            <td class="grade-cell grade-B">A-</td>
+            <td>3.67</td>
+          </tr>
+          <tr>
+            <td>HUM-201</td>
+            <td>Technical Writing</td>
+            <td>2</td>
+            <td class="grade-cell grade-A">A</td>
+            <td>4.00</td>
+          </tr>
+          <tr>
+            <td colspan="2"><strong>Semester Total</strong></td>
+            <td><strong>15</strong></td>
+            <td colspan="2"><strong>GPA: 3.85 / 4.00</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <a href="#" class="download-btn">
+        <i class="fas fa-download"></i> Download Transcript
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <p>Kahtan Khuzdar, Balochistan | +92 123 4567890</p>
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+    </div>
+  </footer>
+
+  <script src="utils/js/results.js"></script>
+   
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+.dashboard-card .loading {
+    text-align: center;
+    padding: 1rem 0;
+    color: #666;
+  }
+  
+  body.dark .dashboard-card .loading {
+    color: #aaa;
+  }
+  
+  #attendanceStats .attendance-card .percentage {
+    font-size: 1.6rem;
+    color: var(--success);
+  }
+  
+  #schedule p.loading {
+    color: #888;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  .dashboard-header span {
+    font-weight: 600;
+    color: var(--primary);
+  }
+  
+  body.dark .dashboard-header span {
+    color: var(--secondary);
+  }
+  
+  .view-all {
+    display: inline-block;
+    margin-top: 1rem;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .view-all:hover {
+    background: var(--primary-dark);
+  }
+  
+  body.dark .view-all {
+    background: var(--secondary);
+  }
+  
+  /* Status Tag Colors for Assignments */
+  .status-pending {
+    background: rgba(241, 196, 15, 0.2);
+    color: #f1c40f;
+  }
+  
+  .status-submitted {
+    background: rgba(46, 204, 113, 0.2);
+    color: #2ecc71;
+  }
+  
+  .status-late {
+    background: rgba(231, 76, 60, 0.2);
+    color: #e74c3c;
+  }
+  
+  body.dark .status-pending,
+  body.dark .status-submitted,
+  body.dark .status-late {
+    opacity: 0.9;
+  }
+  

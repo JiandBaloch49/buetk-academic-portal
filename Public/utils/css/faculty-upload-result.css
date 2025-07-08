@@ -1,0 +1,46 @@
+.form-controls {
+    margin-bottom: 1rem;
+  }
+  
+  .result-form {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 6px rgba(0,0,0,0.05);
+  }
+  
+  #studentsTable table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+  }
+  
+  #studentsTable th, #studentsTable td {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  
+  #submitMarksBtn {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .result-history {
+    margin-top: 2rem;
+  }
+  
+  .result-entry {
+    background: #f7f7f7;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.05);
+  }
+  

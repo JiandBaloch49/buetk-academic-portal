@@ -1,0 +1,68 @@
+.form-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form-controls select {
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  .form-controls button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .assignment-filters {
+    margin: 1rem 0;
+  }
+  
+  .filter-btn {
+    margin-right: 1rem;
+    padding: 0.4rem 0.8rem;
+    border: none;
+    background: #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .filter-btn.active {
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  .assignment-item {
+    background: rgba(255, 255, 255, 0.95);
+    margin-bottom: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  body.dark .assignment-item {
+    background: rgba(34, 34, 34, 0.7);
+  }
+  
+  .assignment-title {
+    font-weight: 600;
+  }
+  
+  .assignment-actions button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    margin-left: 0.5rem;
+    border-radius: 4px;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+  }
+  

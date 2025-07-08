@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard - BUETK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="Style.css"/>
+</head>
+<body>
+
+  <header data-aos="fade-down">
+    <div class="header-container">
+      <a href="index.html" class="logo-container">
+        <img src="images.png" alt="BUETK Logo" class="logo" />
+        <span class="uni-name">BUETK</span>
+      </a>
+  
+      <button id="mobileNavToggle" class="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <nav>
+        <ul id="mobileNav" class="mobile-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="admin-dashboard.html" class="active">Dashboard</a></li>
+          <li><a href="manage-students.html">Manage Students</a></li>
+          <li><a href="manage-courses.html">Manage Courses</a></li>
+          <li><a href="#" id="logoutBtn">Logout</a></li>
+          <button id="darkModeToggle" class="dark-toggle">
+            <i class="fas fa-moon"></i>
+          </button>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="admin-container">
+    <div class="admin-header">
+      <h1>Administrator Dashboard</h1>
+      <p>Welcome back, <span id="adminName"></span></p>
+    </div>
+
+    <div class="admin-grid">
+      <!-- Admin Tools Sidebar -->
+      <div class="admin-sidebar">
+        <h3>Admin Tools</h3>
+        <ul>
+          <li><a href="manage-students.html" class="active"><i class="fas fa-users"></i> Manage Students</a></li>
+          <li><a href="manage-courses.html"><i class="fas fa-book"></i> Manage Courses</a></li>
+          <li><a href="manage-results.html"><i class="fas fa-chart-bar"></i> Manage Results</a></li>
+          <li><a href="system-settings.html"><i class="fas fa-cog"></i> System Settings</a></li>
+          <li><a href="reports.html"><i class="fas fa-file-alt"></i> Generate Reports</a></li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="admin-main">
+        <h2>System Overview</h2>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <i class="fas fa-users"></i>
+            <h3>Total Students</h3>
+            <p id="totalStudents">0</p>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-book"></i>
+            <h3>Active Courses</h3>
+            <p id="activeCourses">0</p>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h3>Faculty Members</h3>
+            <p id="facultyCount">0</p>
+          </div>
+        </div>
+        
+        <div class="recent-activity">
+          <h3>Recent Activity</h3>
+          <div id="activityLog">
+            <p>Loading activity...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>Kahtan Khuzdar, Balochistan | +123 456 7890</p>
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+    </div>
+  </footer>
+
+  <script src="Public/utils/js/admin-dashboard.js"></script>
+  <script src="Script.js"></script>
+</body>
+</html>

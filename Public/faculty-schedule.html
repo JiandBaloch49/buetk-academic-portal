@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faculty Teaching Schedule - BUETK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="Style.css">
+  <style>
+
+
+    /* Main Content Styles */
+    .dashboard-container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .dashboard-header {
+      margin-bottom: 2rem;
+    }
+
+    .dashboard-header h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    body.dark .dashboard-header h1 {
+      color: var(--secondary);
+    }
+
+    .dashboard-header p {
+      color: var(--text-dark);
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    body.dark .dashboard-header p {
+      color: var(--text-light);
+    }
+
+    /* Filter Section */
+    .schedule-filters {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(5px);
+      border-radius: var(--border-radius);
+      padding: 1.2rem;
+      box-shadow: var(--card-shadow);
+      flex-wrap: wrap;
+    }
+
+    body.dark .schedule-filters {
+      background: rgba(34, 34, 34, 0.7);
+    }
+
+    .filter-group {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .filter-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    body.dark .filter-group label {
+      color: var(--secondary);
+    }
+
+    .filter-group select {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: white;
+      font-family: var(--font-main);
+    }
+
+    body.dark .filter-group select {
+      background: #333;
+      border-color: #444;
+      color: white;
+    }
+
+    /* Schedule Table */
+    .schedule-table {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(5px);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      box-shadow: var(--card-shadow);
+      overflow-x: auto;
+    }
+
+    body.dark .schedule-table {
+      background: rgba(34, 34, 34, 0.7);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      background: var(--primary);
+      color: white;
+      text-align: left;
+      padding: 1rem;
+      font-weight: 500;
+    }
+
+    body.dark th {
+      background: rgba(0, 64, 128, 0.8);
+    }
+
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark td {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover {
+      background: rgba(0, 64, 128, 0.05);
+    }
+
+    body.dark tr:hover {
+      background: rgba(0, 64, 128, 0.1);
+    }
+
+    .highlight-today {
+      background-color: rgba(46, 204, 113, 0.15);
+      font-weight: bold;
+    }
+
+    body.dark .highlight-today {
+      background-color: rgba(46, 204, 113, 0.2);
+    }
+
+    .schedule-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .edit-btn, .delete-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 0.5rem;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .edit-btn {
+      color: var(--primary);
+      background: rgba(0, 64, 128, 0.1);
+    }
+
+    body.dark .edit-btn {
+      color: var(--secondary);
+      background: rgba(0, 64, 128, 0.2);
+    }
+
+    .edit-btn:hover {
+      background: rgba(0, 64, 128, 0.2);
+    }
+
+    body.dark .edit-btn:hover {
+      background: rgba(0, 64, 128, 0.3);
+    }
+
+    .delete-btn {
+      color: #e74c3c;
+      background: rgba(231, 76, 60, 0.1);
+    }
+
+    body.dark .delete-btn {
+      background: rgba(231, 76, 60, 0.2);
+    }
+
+    .delete-btn:hover {
+      background: rgba(231, 76, 60, 0.2);
+    }
+
+    body.dark .delete-btn:hover {
+      background: rgba(231, 76, 60, 0.3);
+    }
+
+    /* Add Schedule Button */
+    .add-schedule-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    body.dark .add-schedule-btn {
+      background: var(--secondary);
+      color: var(--text-dark);
+    }
+
+    .add-schedule-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Footer Styles */
+    footer {
+      background: var(--primary);
+      color: var(--text-light);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    footer .social {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    footer .social a {
+      color: var(--text-light);
+      font-size: 1.2rem;
+      transition: color var(--transition);
+    }
+
+    footer .social a:hover {
+      color: var(--secondary);
+    }
+
+    .credits {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      
+      nav ul {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .schedule-filters {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+      
+      .dashboard-header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo-container">
+        <div class="logo">BUETK</div>
+        <span class="uni-name">BUET Khuzdar</span>
+      </a>
+      
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="faculty-dashboard.html" class="active">Dashboard</a></li>
+          <li><a href="faculty-courses.html">My Courses</a></li>
+          <li><a href="faculty-attendance.html">Attendance</a></li>
+          <li><a href="faculty-grading.html">Grading</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <button id="darkModeToggle" class="dark-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="logoutBtn" class="btn">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <h1>My Teaching Schedule</h1>
+      <p>Filter and manage your schedule below:</p>
+    </div>
+
+    <div class="schedule-filters">
+      <div class="filter-group">
+        <label for="semesterFilter">Semester</label>
+        <select id="semesterFilter">
+          <option value="">Loading semesters...</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label for="weekFilter">Week</label>
+        <select id="weekFilter">
+          <option value="">All Weeks</option>
+          <option value="1">Week 1</option>
+          <option value="2">Week 2</option>
+          <option value="3">Week 3</option>
+          <option value="4">Week 4</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="schedule-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Course</th>
+            <th>Room</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="scheduleTableBody">
+          <tr>
+            <td colspan="5" class="loading">Loading schedule...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <button class="add-schedule-btn">
+      <i class="fas fa-plus"></i> Add New Schedule
+    </button>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <p>Kahtan Khuzdar, Balochistan | +92 123 4567890</p>
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+    </div>
+  </footer>
+<script src="utils/js/faculty-schedule.js"></script>
+</body>
+</html>

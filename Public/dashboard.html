@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Dashboard - BUETK</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="Style.css"/>
+</head>
+<body>
+
+  <header data-aos="fade-down">
+    <div class="header-container">
+      <a href="index.html" class="logo-container">
+        <img src="images.png" alt="BUETK Logo" class="logo" />
+        <span class="uni-name">BUETK</span>
+      </a>
+
+      <button id="mobileNavToggle" class="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav>
+        <ul id="mobileNav" class="mobile-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="student-dashboard.html" class="active">Dashboard</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="student-results.html">Results</a></li>
+          <li><a href="student-assignments.html">Assignments</a></li>
+          <li><a href="timetable.html">Class Schedule</a></li>
+          <li><a href="#" id="logoutBtn">Logout</a></li>
+          <button id="darkModeToggle" class="dark-toggle">
+            <i class="fas fa-moon"></i>
+          </button>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+    <div class="dashboard-header">
+      <h1>Student Dashboard</h1>
+      <p>Welcome back, <span id="studentName"></span></p>
+    </div>
+
+    <div class="dashboard-grid">
+      <!-- Profile Card -->
+      <div class="dashboard-card">
+        <div class="card-header">
+          <h2><i class="fas fa-user"></i> Your Profile</h2>
+        </div>
+        <div class="card-body">
+          <div class="profile-info">
+            <p><strong>Name:</strong> <span id="profileName"></span></p>
+            <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+            <p><strong>Student ID:</strong> <span id="profileId"></span></p>
+            <p><strong>Department:</strong> <span id="profileDept"></span></p>
+          </div>
+          <button id="editProfileBtn" class="btn">Edit Profile</button>
+        </div>
+      </div>
+
+      <!-- Academic Summary Card -->
+      <div class="dashboard-card">
+        <div class="card-header">
+          <h2><i class="fas fa-graduation-cap"></i> Academic Summary</h2>
+        </div>
+        <div class="card-body">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <i class="fas fa-book"></i>
+              <h3>Registered Courses</h3>
+              <p id="courseCount">0</p>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-chart-line"></i>
+              <h3>Current CGPA</h3>
+              <p id="cgpaValue">0.00</p>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-calendar"></i>
+              <h3>Current Semester</h3>
+              <p>Fall 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions Card -->
+      <div class="dashboard-card">
+        <div class="card-header">
+          <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+        </div>
+        <div class="card-body">
+          <div class="action-grid">
+            <a href="courses.html" class="action-card">
+              <i class="fas fa-book-open"></i>
+              <span>Register Courses</span>
+            </a>
+            <a href="student-results.html" class="action-card">
+              <i class="fas fa-file-alt"></i>
+              <span>View Results</span>
+            </a>
+            <a href="student-assignments.html" class="action-card">
+              <i class="fas fa-tasks"></i>
+              <span>View Assignments</span>
+            </a>
+            <a href="timetable.html" class="action-card">
+              <i class="fas fa-calendar-alt"></i>
+              <span>Class Schedule</span>
+            </a>
+            <a href="#" class="action-card" id="transcriptBtn">
+              <i class="fas fa-download"></i>
+              <span>Download Transcript</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Courses Card -->
+      <div class="dashboard-card">
+        <div class="card-header">
+          <h2><i class="fas fa-book"></i> Your Courses</h2>
+        </div>
+        <div class="card-body">
+          <div class="courses-list" id="coursesList">
+            <!-- Courses will be populated here -->
+            <div class="loader">Loading courses...</div>
+          </div>
+          <a href="courses.html" class="btn view-all">View All Courses</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>Kahtan Khuzdar, Balochistan | +123 456 7890</p>
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+    </div>
+  </footer>
+
+  <!-- Profile Edit Modal -->
+  <div id="profileModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Edit Profile</h2>
+      <form id="profileForm">
+        <div class="form-group">
+          <label for="editName">Full Name</label>
+          <input type="text" id="editName" required>
+        </div>
+        <div class="form-group">
+          <label for="editEmail">Email</label>
+          <input type="email" id="editEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="editDepartment">Department</label>
+          <select id="editDepartment" required>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Save Changes</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="utils/js/student-dashboard.js"></script>
+  <script src="Script.js"></script>
+</body>
+</html>

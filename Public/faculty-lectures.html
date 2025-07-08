@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture Sharing - Faculty</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    :root {
+      --primary: #3498db;
+      --primary-dark: #2980b9;
+      --secondary: #2c3e50;
+      --success: #27ae60;
+      --danger: #e74c3c;
+      --warning: #f39c12;
+      --light: #ecf0f1;
+      --dark: #34495e;
+      --gray: #95a5a6;
+      --white: #ffffff;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      color: var(--dark);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--white);
+    }
+    
+    .logo {
+      width: 50px;
+      height: 50px;
+      margin-right: 15px;
+      border-radius: 50%;
+      background: var(--white);
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    .logo i {
+      font-size: 28px;
+      color: var(--primary);
+    }
+    
+    .uni-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    
+    .mobile-nav {
+      display: flex;
+      list-style: none;
+    }
+    
+    .mobile-nav li {
+      margin-left: 15px;
+    }
+    
+    .mobile-nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      padding: 8px 12px;
+      border-radius: 4px;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    
+    .mobile-nav a i {
+      margin-right: 6px;
+    }
+    
+    .mobile-nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .mobile-nav a.active {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .mobile-nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--white);
+      border-radius: 2px;
+    }
+    
+    .dashboard-container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+    
+    .dashboard-header {
+      margin-bottom: 30px;
+      text-align: center;
+      padding: 20px;
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+    
+    .dashboard-header h1 {
+      font-size: 2.2rem;
+      color: var(--secondary);
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .dashboard-header p {
+      color: var(--gray);
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .lecture-form {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      margin-bottom: 40px;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--secondary);
+      font-size: 1rem;
+    }
+    
+    select, input[type="text"] {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      transition: var(--transition);
+    }
+    
+    select:focus, input[type="text"]:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    }
+    
+    .file-upload-container {
+      border: 2px dashed #ddd;
+      border-radius: 8px;
+      padding: 30px;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      background: #fafafa;
+    }
+    
+    .file-upload-container:hover {
+      border-color: var(--primary);
+      background-color: rgba(52, 152, 219, 0.05);
+    }
+    
+    .file-upload-container.dragover {
+      background-color: rgba(52, 152, 219, 0.1);
+      border-color: var(--primary);
+    }
+    
+    .upload-icon {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    
+    .file-input-label {
+      background: var(--primary);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: 6px;
+      display: inline-block;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+    
+    .file-input-label:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    
+    #lectureFile {
+      position: absolute;
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
+    
+    .file-name {
+      margin-top: 15px;
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    
+    #uploadBtn {
+      background: var(--success);
+      color: var(--white);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: block;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      box-shadow: 0 4px 6px rgba(39, 174, 96, 0.3);
+    }
+    
+    #uploadBtn:hover {
+      background: #219653;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(39, 174, 96, 0.4);
+    }
+    
+    #uploadBtn:disabled {
+      background: var(--gray);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    
+    .lecture-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+    
+    .lecture-card {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .lecture-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .lecture-header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
+      padding: 20px;
+    }
+    
+    .lecture-header h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      /* -webkit-line-clamp: 2; */
+      -webkit-box-orient: vertical;
+      min-height: 3em;
+    }
+    
+    .lecture-date {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+    }
+    
+    .lecture-date i {
+      margin-right: 5px;
+    }
+    
+    .lecture-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .lecture-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+    }
+    
+    .lecture-semester {
+      background: var(--light);
+      color: var(--dark);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+    }
+    
+    .lecture-semester i {
+      margin-right: 5px;
+    }
+    
+    .lecture-file-type {
+      background: var(--warning);
+      color: var(--white);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+    }
+    
+    .lecture-file-type i {
+      margin-right: 5px;
+    }
+    
+    .lecture-desc {
+      margin-bottom: 15px;
+      color: var(--dark);
+      flex: 1;
+      font-size: 0.95rem;
+    }
+    
+    .lecture-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: auto;
+    }
+    
+    .btn {
+      flex: 1;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    
+    .btn-view {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 2px 5px rgba(52, 152, 219, 0.3);
+    }
+    
+    .btn-view:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 7px rgba(52, 152, 219, 0.4);
+    }
+    
+    .btn-delete {
+      background: var(--light);
+      color: var(--danger);
+      box-shadow: 0 2px 5px rgba(231, 76, 60, 0.2);
+    }
+    
+    .btn-delete:hover {
+      background: var(--danger);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 7px rgba(231, 76, 60, 0.3);
+    }
+    
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 50px 20px;
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      border: 1px solid #e0e0e0;
+    }
+    
+    .empty-icon {
+      font-size: 4rem;
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+    
+    .empty-state h3 {
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    
+    .empty-state p {
+      color: var(--gray);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .loader {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 50px;
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+    
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 15px 25px;
+      border-radius: 6px;
+      color: var(--white);
+      font-weight: 500;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      z-index: 10000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .toast.success {
+      background: var(--success);
+    }
+    
+    .toast.error {
+      background: var(--danger);
+    }
+    
+    .toast.info {
+      background: var(--primary);
+    }
+    
+    footer {
+      background: var(--secondary);
+      color: var(--white);
+      padding: 20px;
+      margin-top: 50px;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .credits {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .mobile-nav {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .mobile-nav li {
+        margin: 5px 8px;
+      }
+      
+      .lecture-form {
+        padding: 20px;
+      }
+      
+      .lecture-list {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .uni-name {
+        font-size: 1.2rem;
+      }
+      
+      .dashboard-header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .file-upload-container {
+        padding: 20px;
+      }
+      
+      .mobile-nav {
+        font-size: 0.9rem;
+      }
+      
+      .lecture-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="faculty-dashboard.html" class="logo-container">
+        <div class="logo">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <span class="uni-name">BUETK</span>
+      </a>
+      <ul class="mobile-nav">
+        <li><a href="faculty-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="faculty-assignments.html"><i class="fas fa-tasks"></i> Assignments</a></li>
+        <li><a href="faculty-attendance.html"><i class="fas fa-user-check"></i> Attendance</a></li>
+        <li><a href="faculty-lectures.html" class="active"><i class="fas fa-book"></i> Lectures</a></li>
+        <li><a href="faculty-upload-result.html"><i class="fas fa-graduation-cap"></i> Grading</a></li>
+        <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+    <div class="dashboard-header">
+      <h1><i class="fas fa-book-open"></i> Lecture Sharing Platform</h1>
+      <p>Upload and manage lecture materials for your students. Share resources, videos, and presentations.</p>
+    </div>
+
+    <form id="lectureForm" class="lecture-form">
+      <div class="form-group">
+        <label for="semesterSelect"><i class="fas fa-calendar-alt"></i> Select Semester</label>
+        <select id="semesterSelect" required>
+          <option value="" disabled selected>Choose Semester</option>
+          <!-- Semesters will be loaded dynamically -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="lectureTitle"><i class="fas fa-heading"></i> Lecture Title</label>
+        <input type="text" id="lectureTitle" placeholder="e.g. Database Systems - SQL Fundamentals" required />
+      </div>
+
+      <div class="form-group">
+        <label><i class="fas fa-file-upload"></i> Upload Lecture Material</label>
+        <div class="file-upload-container" id="dropZone">
+          <div class="upload-icon">
+            <i class="fas fa-cloud-upload-alt"></i>
+          </div>
+          <p>Drag & drop your file here</p>
+          <p style="margin: 10px 0;">OR</p>
+          <label class="file-input-label">
+            <i class="fas fa-file-upload"></i> Browse Files
+            <input type="file" id="lectureFile" required />
+          </label>
+          <div class="file-name" id="fileName">No file selected</div>
+        </div>
+      </div>
+
+      <button type="submit" id="uploadBtn">
+        <i class="fas fa-upload"></i> Upload & Share
+      </button>
+    </form>
+
+    <div class="lecture-list" id="lectureList">
+      <div class="loader">
+        <i class="fas fa-spinner fa-spin"></i> Loading lectures...
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p class="credits">© 2025 BUETK. Designed with <span style="color: #e74c3c;"><i class="fas fa-heart"></i></span> by Jiand Baloch</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // API Base URL - Replace with your actual backend URL
+      const API_BASE_URL = 'https://your-backend-api.com';
+      
+      // DOM Elements
+      const lectureForm = document.getElementById('lectureForm');
+      const semesterSelect = document.getElementById('semesterSelect');
+      const lectureFile = document.getElementById('lectureFile');
+      const fileName = document.getElementById('fileName');
+      const dropZone = document.getElementById('dropZone');
+      const uploadBtn = document.getElementById('uploadBtn');
+      const lectureList = document.getElementById('lectureList');
+      const toast = document.getElementById('toast');
+      const logoutBtn = document.getElementById('logoutBtn');
+      
+      // Authentication token (in a real app, this would come from login)
+      let authToken = null;
+      
+      // Initialize the page
+      async function initPage() {
+        // Check if user is authenticated
+        authToken = localStorage.getItem('facultyToken');
+        if (!authToken) {
+          redirectToLogin();
+          return;
+        }
+        
+        // Load semesters and lectures
+        try {
+          await loadSemesters();
+          await loadLectures();
+        } catch (error) {
+          showToast('Failed to initialize page: ' + error.message, 'error');
+        }
+      }
+      
+      // Load semesters from backend
+      async function loadSemesters() {
+        try {
+          const response = await fetch(`${API_BASE_URL}/api/semesters`, {
+            method: 'GET',
+            headers: {
+              'Authorization': `Bearer ${authToken}`,
+              'Content-Type': 'application/json'
+            }
+          });
+          
+          if (!response.ok) {
+            throw new Error('Failed to load semesters');
+          }
+          
+          const semesters = await response.json();
+          populateSemesterSelect(semesters);
+        } catch (error) {
+          showToast('Error loading semesters: ' + error.message, 'error');
+          console.error('Error loading semesters:', error);
+        }
+      }
+      
+      // Populate semester dropdown
+      function populateSemesterSelect(semesters) {
+        semesterSelect.innerHTML = '<option value="" disabled selected>Choose Semester</option>';
+        semesters.forEach(semester => {
+          const option = document.createElement('option');
+          option.value = semester._id;
+          option.textContent = semester.name;
+          semesterSelect.appendChild(option);
+        });
+      }
+      
+      // Load lectures from backend
+      async function loadLectures() {
+        lectureList.innerHTML = '<div class="loader"><i class="fas fa-spinner fa-spin"></i> Loading lectures...</div>';
+        
+        try {
+          const response = await fetch(`${API_BASE_URL}/api/lectures`, {
+            method: 'GET',
+            headers: {
+              'Authorization': `Bearer ${authToken}`,
+              'Content-Type': 'application/json'
+            }
+          });
+          
+          if (!response.ok) {
+            throw new Error('Failed to load lectures');
+          }
+          
+          const lectures = await response.json();
+          renderLectures(lectures);
+        } catch (error) {
+          lectureList.innerHTML = '<div class="empty-state"><i class="fas fa-exclamation-triangle empty-icon"></i><h3>Failed to Load Lectures</h3><p>Please try again later</p></div>';
+          showToast('Error loading lectures: ' + error.message, 'error');
+          console.error('Error loading lectures:', error);
+        }
+      }
+      
+      // Render lectures to the page
+      function renderLectures(lectures) {
+        if (!lectures || lectures.length === 0) {
+          lectureList.innerHTML = `
+            <div class="empty-state">
+              <i class="fas fa-book empty-icon"></i>
+              <h3>No Lectures Available</h3>
+              <p>Upload your first lecture to get started</p>
+            </div>
+          `;
+          return;
+        }
+        
+        lectureList.innerHTML = '';
+        
+        lectures.forEach(lecture => {
+          const lectureCard = document.createElement('div');
+          lectureCard.className = 'lecture-card';
+          lectureCard.innerHTML = `
+            <div class="lecture-header">
+              <h3>${lecture.title}</h3>
+              <div class="lecture-date"><i class="fas fa-calendar"></i> Uploaded: ${new Date(lecture.uploadDate).toLocaleDateString()}</div>
+            </div>
+            <div class="lecture-body">
+              <div class="lecture-meta">
+                <div class="lecture-semester"><i class="fas fa-calendar-alt"></i> ${lecture.semester.name}</div>
+                <div class="lecture-file-type"><i class="fas fa-file"></i> ${getFileType(lecture.fileName)}</div>
+              </div>
+              <p class="lecture-desc">${lecture.description || 'Lecture material for students'}</p>
+              <div class="lecture-actions">
+                <a href="${API_BASE_URL}/uploads/${lecture.fileName}" target="_blank" class="btn btn-view">
+                  <i class="fas fa-eye"></i> View
+                </a>
+                <button class="btn btn-delete" data-id="${lecture._id}">
+                  <i class="fas fa-trash"></i> Delete
+                </button>
+              </div>
+            </div>
+          `;
+          lectureList.appendChild(lectureCard);
+        });
+        
+        // Attach delete event listeners
+        document.querySelectorAll('.btn-delete').forEach(btn => {
+          btn.addEventListener('click', handleDeleteLecture);
+        });
+      }
+      
+      // Handle lecture upload
+      lectureForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const semesterId = semesterSelect.value;
+        const title = lectureTitle.value.trim();
+        const file = lectureFile.files[0];
+        
+        if (!semesterId || !title || !file) {
+          showToast('Please fill all fields and select a file', 'error');
+          return;
+        }
+        
+        // Create form data
+        const formData = new FormData();
+        formData.append('semesterId', semesterId);
+        formData.append('title', title);
+        formData.append('file', file);
+        
+        // Disable button and show loading
+        uploadBtn.disabled = true;
+        uploadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Uploading...';
+        
+        try {
+          // Send to backend
+          const response = await fetch(`${API_BASE_URL}/api/lectures`, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${authToken}`
+            },
+            body: formData
+          });
+          
+          if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Upload failed');
+          }
+          
+          const newLecture = await response.json();
+          
+          // Reset form
+          lectureForm.reset();
+          fileName.textContent = 'No file selected';
+          
+          // Reload lectures
+          await loadLectures();
+          
+          showToast('Lecture uploaded successfully!', 'success');
+        } catch (error) {
+          console.error('Upload error:', error);
+          showToast('Failed to upload: ' + error.message, 'error');
+        } finally {
+          uploadBtn.disabled = false;
+          uploadBtn.innerHTML = '<i class="fas fa-upload"></i> Upload & Share';
+        }
+      });
+      
+      // Handle lecture deletion
+      async function handleDeleteLecture(e) {
+        const lectureId = e.target.closest('.btn-delete').dataset.id;
+        
+        if (!confirm('Are you sure you want to delete this lecture?')) return;
+        
+        try {
+          const response = await fetch(`${API_BASE_URL}/api/lectures/${lectureId}`, {
+            method: 'DELETE',
+            headers: {
+              'Authorization': `Bearer ${authToken}`,
+              'Content-Type': 'application/json'
+            }
+          });
+          
+          if (!response.ok) {
+            throw new Error('Failed to delete lecture');
+          }
+          
+          // Remove from UI immediately
+          e.target.closest('.lecture-card').remove();
+          
+          // Check if any lectures left
+          if (document.querySelectorAll('.lecture-card').length === 0) {
+            lectureList.innerHTML = `
+              <div class="empty-state">
+                <i class="fas fa-book empty-icon"></i>
+                <h3>No Lectures Available</h3>
+                <p>Upload your first lecture to get started</p>
+              </div>
+            `;
+          }
+          
+          showToast('Lecture deleted successfully', 'success');
+        } catch (error) {
+          console.error('Delete error:', error);
+          showToast('Failed to delete lecture: ' + error.message, 'error');
+        }
+      }
+      
+      // File upload handling
+      lectureFile.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) {
+          fileName.textContent = e.target.files[0].name;
+        } else {
+          fileName.textContent = 'No file selected';
+        }
+      });
+      
+      // Drag and drop functionality
+      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, preventDefaults, false);
+      });
+      
+      function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      
+      ['dragenter', 'dragover'].forEach(eventName => {
+        dropZone.addEventListener(eventName, highlight, false);
+      });
+      
+      ['dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, unhighlight, false);
+      });
+      
+      function highlight() {
+        dropZone.classList.add('dragover');
+      }
+      
+      function unhighlight() {
+        dropZone.classList.remove('dragover');
+      }
+      
+      dropZone.addEventListener('drop', handleDrop, false);
+      
+      function handleDrop(e) {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        lectureFile.files = files;
+        fileName.textContent = files[0].name;
+      }
+      
+      // Toast notification function
+      function showToast(message, type) {
+        const icon = type === 'success' ? 'fa-check-circle' : 
+                     type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle';
+        
+        toast.innerHTML = `<i class="fas ${icon}"></i> ${message}`;
+        toast.className = 'toast ' + type;
+        toast.classList.add('show');
+        
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 3000);
+      }
+      
+      // Get file type from filename
+      function getFileType(filename) {
+        if (!filename) return 'FILE';
+        const ext = filename.split('.').pop().toLowerCase();
+        if (['pdf'].includes(ext)) return 'PDF';
+        if (['doc', 'docx'].includes(ext)) return 'DOC';
+        if (['ppt', 'pptx'].includes(ext)) return 'PPT';
+        if (['mp4', 'mov', 'avi'].includes(ext)) return 'VIDEO';
+        if (['jpg', 'jpeg', 'png', 'gif'].includes(ext)) return 'IMAGE';
+        return ext.toUpperCase();
+      }
+      
+      // Logout functionality
+      logoutBtn.addEventListener('click', () => {
+        localStorage.removeItem('facultyToken');
+        redirectToLogin();
+      });
+      
+      function redirectToLogin() {
+        window.location.href = 'login.html';
+      }
+      
+      // Fix navigation issue
+      const navLinks = document.querySelectorAll('.mobile-nav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          // Get current page filename
+          const currentPage = window.location.pathname.split('/').pop();
+          
+          // Get link page filename
+          const linkHref = this.getAttribute('href');
+          
+          // If link points to current page, prevent default action
+          if (linkHref === currentPage) {
+            e.preventDefault();
+          }
+        });
+      });
+      
+      // Initialize the page
+      initPage();
+    });
+  </script>
+</body>
+</html>

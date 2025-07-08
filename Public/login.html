@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BUETK - Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo-container">
+        <img src="images.png" alt="BUETK Logo" class="logo">
+        <span class="uni-name">BUETK</span>
+      </a>
+      
+      <button id="mobileNavToggle" class="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav>
+        <ul id="mobileNav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="auth-links">
+            <a href="login.html" class="btn active">Login</a>
+            <button id="darkModeToggle" class="dark-toggle">
+              <i class="fas fa-moon"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="auth-container">
+    <div class="container">
+      <div class="auth-form-container">
+        <div class="auth-form-header">
+          <h2>Welcome Back</h2>
+          <p>Sign in to access your account</p>
+        </div>
+        
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="email">University Email</label>
+            <input type="email" id="email" placeholder="example@buetk.edu.pk" required>
+          </div>
+          
+          <form id="loginForm">
+            <!-- ... -->
+            <div class="form-group">
+              <label for="password">Password</label>
+              <div class="password-container">
+                <input type="password" id="password" placeholder="Enter your password" required>
+                <button type="button" class="password-toggle" id="passwordToggle">
+                  <i class="fas fa-eye"></i>
+              </button>
+              </div>
+            </div>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+          
+            <button type="submit" class="btn btn-primary">Login to Account</button>
+            <p id="formMessage"></p>
+          </form>
+        
+        <div class="login-info">
+          <h3>Login Instructions:</h3>
+          <ul>
+            <li><strong>Students:</strong> Use your student email and password</li>
+            <li><strong>Administrators:</strong> Use admin credentials</li>
+            <li><strong>Faculty:</strong> Use your faculty email and password</li>
+            <li>You'll be redirected automatically to the appropriate dashboard</li>
+          </ul>
+          
+          <div class="role-indicator">
+            <span id="roleIndicator">Logging in as: Student</span>
+          </div>
+        </div>
+        
+        <div class="auth-footer">
+          <p>Don't have an account? <a href="signup.html">Create one now</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <p>Kahtan Khuzdar, Balochistan | +123 456 7890</p>
+      
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+    </div>
+  </footer>
+<script src="utils/js/login.js"></script>
+<script src="/js/aos.js"></script>
+</body>
+</html>

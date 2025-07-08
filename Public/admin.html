@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard - BUETK</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="Public/utils/css/Style.css"/>
+</head>
+<body>
+
+  <header data-aos="fade-down">
+    <div class="header-container">
+      <a href="index.html" class="logo-container">
+        <img src="images.png" alt="BUETK Logo" class="logo" />
+        <span class="uni-name">BUETK</span>
+      </a>
+  
+      <!-- Hamburger toggle for mobile -->
+      <button id="mobileNavToggle" class="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <nav>
+        <ul id="mobileNav" class="mobile-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          
+         
+          
+          <li>
+            <button id="darkModeToggle" class="dark-toggle">
+              <i class="fas fa-moon"></i>
+            </button>
+        
+        </li>
+        
+        </ul>
+      
+      </nav>
+      <li id="authLinks">
+        <a href="login.html" class="btn" id="loginLink">Login</a>
+        <a href="signup.html" class="btn" id="signupLink" style="margin-left: 10px;">Signup</a>
+      </li>
+    </div>
+  </header>
+  
+  <main class="admin-container">
+    <div class="admin-header">
+      <h1>Administrator Dashboard</h1>
+      <p>Manage university resources and student data</p>
+    </div>
+
+    <div class="admin-grid">
+      <!-- Admin Sidebar -->
+      <div class="admin-sidebar">
+        <h3>Admin Tools</h3>
+        <ul>
+          <li><a href="manage-students.html" class="active"><i class="fas fa-users"></i> Manage Students</a></li>
+          <li><a href="manage-courses.html"><i class="fas fa-book"></i> Manage Courses</a></li>
+          <li><a href="manage-results.html"><i class="fas fa-chart-bar"></i> Manage Results</a></li>
+          <li><a href="system-settings.html"><i class="fas fa-cog"></i> System Settings</a></li>
+          <li><a href="reports.html"><i class="fas fa-file-alt"></i> Generate Reports</a></li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="admin-main">
+        <h2>Student Management</h2>
+        
+        <div class="admin-actions">
+          <button id="addStudentBtn" class="btn"><i class="fas fa-plus"></i> Add Student</button>
+          <div class="search-box">
+            <input type="text" id="studentSearch" placeholder="Search students...">
+            <button><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="studentsTable">
+              <!-- Students will be populated here -->
+              <tr>
+                <td colspan="6" class="loading">Loading students...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <button disabled><i class="fas fa-chevron-left"></i></button>
+          <span>Page 1 of 1</span>
+          <button disabled><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>Kahtan Khuzdar, Balochistan | +123 456 7890</p>
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p class="credits">© 2025 BUETK. Designed with 💛 by Jiand Baloch</p>
+    </div>
+  </footer>
+
+  <!-- Add Student Modal -->
+  <div id="addStudentModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Add New Student</h2>
+      <form id="addStudentForm">
+        <div class="form-group">
+          <label for="studentName">Full Name</label>
+          <input type="text" id="studentName" required>
+        </div>
+        <div class="form-group">
+          <label for="studentEmail">Email</label>
+          <input type="email" id="studentEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="studentPassword">Password</label>
+          <input type="password" id="studentPassword" required>
+        </div>
+        <div class="form-group">
+          <label for="studentDepartment">Department</label>
+          <select id="studentDepartment" required>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Add Student</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+  <script src="Script.js"></script>
+</body>
+</html>

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Assignments - Faculty</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="Style.css">
+  <style>
+    
+    
+    main.dashboard-container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    
+    .dashboard-header {
+      margin-bottom: 30px;
+      text-align: center;
+      padding: 20px;
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+    
+    .dashboard-header h1 {
+      font-size: 2rem;
+      color: var(--secondary);
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .dashboard-header p {
+      color: var(--gray);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .form-controls {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    #semesterSelect {
+      flex: 1;
+      min-width: 250px;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    #semesterSelect:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    }
+    
+    #createNewBtn {
+      background: var(--success);
+      color: var(--white);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 6px rgba(39, 174, 96, 0.3);
+    }
+    
+    #createNewBtn:hover {
+      background: #219653;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(39, 174, 96, 0.4);
+    }
+    
+    .assignment-filters {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      background: var(--light);
+      color: var(--dark);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .filter-btn.active {
+      background: var(--primary);
+      color: var(--white);
+    }
+    
+    .filter-btn:hover:not(.active) {
+      background: #d5dbdb;
+    }
+    
+    .assignment-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+    
+    .assignment-item {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .assignment-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .assignment-header {
+      padding: 20px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
+    }
+    
+    .assignment-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      /* -webkit-line-clamp: 2; */
+      -webkit-box-orient: vertical;
+      min-height: 3em;
+    }
+    
+    .assignment-due {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .assignment-due i {
+      font-size: 0.9em;
+    }
+    
+    .assignment-body {
+      padding: 20px;
+      flex: 1;
+    }
+    
+    .assignment-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+    }
+    
+    .assignment-status {
+      background: var(--light);
+      color: var(--dark);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .assignment-status.completed {
+      background: rgba(39, 174, 96, 0.15);
+      color: var(--success);
+    }
+    
+    .assignment-status.pending {
+      background: rgba(231, 76, 60, 0.15);
+      color: var(--danger);
+    }
+    
+    .assignment-submissions {
+      background: rgba(52, 152, 219, 0.15);
+      color: var(--primary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .assignment-description {
+      margin-bottom: 20px;
+      color: var(--dark);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    
+    .assignment-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: auto;
+    }
+    
+    .btn {
+      padding: 10px 15px;
+      border-radius: 6px;
+      border: none;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+    
+    .mark-complete-btn {
+      flex: 1;
+      background: var(--success);
+      color: var(--white);
+      box-shadow: 0 2px 5px rgba(39, 174, 96, 0.3);
+    }
+    
+    .mark-complete-btn:hover {
+      background: #219653;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 7px rgba(39, 174, 96, 0.4);
+    }
+    
+    .reopen-btn {
+      flex: 1;
+      background: var(--warning);
+      color: var(--white);
+      box-shadow: 0 2px 5px rgba(243, 156, 18, 0.3);
+    }
+    
+    .reopen-btn:hover {
+      background: #e67e22;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 7px rgba(243, 156, 18, 0.4);
+    }
+    
+    .delete-btn {
+      background: var(--light);
+      color: var(--danger);
+      box-shadow: 0 2px 5px rgba(231, 76, 60, 0.2);
+    }
+    
+    .delete-btn:hover {
+      background: var(--danger);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 7px rgba(231, 76, 60, 0.3);
+    }
+    
+    .loader {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 50px;
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+    
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 50px 20px;
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      border: 1px solid #e0e0e0;
+    }
+    
+    .empty-icon {
+      font-size: 4rem;
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+    
+    .empty-state h3 {
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    
+    .empty-state p {
+      color: var(--gray);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    /* footer {
+      background: var(--secondary);
+      color: var(--white);
+      padding: 20px;
+      margin-top: 50px;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .credits {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    } */
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+      
+      .mobile-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .mobile-nav li {
+        margin: 5px;
+      }
+      
+      .form-controls {
+        flex-direction: column;
+      }
+      
+      #semesterSelect, #createNewBtn {
+        width: 100%;
+      }
+      
+      .assignment-list {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .uni-name {
+        font-size: 1.2rem;
+      }
+      
+      .dashboard-header h1 {
+        font-size: 1.7rem;
+      }
+      
+      .mobile-nav a {
+        font-size: 0.85rem;
+        padding: 6px 8px;
+      }
+      
+      .assignment-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="faculty-dashboard.html" class="logo-container">
+        <div class="logo">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <span class="uni-name">BUETK</span>
+      </a>
+      <ul class="mobile-nav">
+        <li><a href="faculty-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="faculty-assignments.html" class="active"><i class="fas fa-tasks"></i> Assignments</a></li>
+        <li><a href="faculty-batches.html"><i class="fas fa-users"></i> Batches</a></li>
+        <li><a href="faculty-attendance.html"><i class="fas fa-user-check"></i> Attendance</a></li>
+        <li><a href="faculty-lectures.html"><i class="fas fa-book"></i> Lectures</a></li>
+        <li><a href="faculty-upload-result.html"><i class="fas fa-graduation-cap"></i> Grading</a></li>
+        <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+    <div class="dashboard-header">
+      <h1><i class="fas fa-tasks"></i> Assignments, Quizzes & Tests</h1>
+      <p>Manage and track student assessments for selected semester</p>
+    </div>
+
+    <div class="form-controls">
+      <select id="semesterSelect">
+        <option disabled selected>Loading semesters...</option>
+      </select>
+      <button id="createNewBtn"><i class="fas fa-plus"></i> Create New</button>
+    </div>
+
+    <div class="assignment-filters">
+      <button class="filter-btn active" data-filter="pending"><i class="fas fa-clock"></i> Pending</button>
+      <button class="filter-btn" data-filter="completed"><i class="fas fa-check-circle"></i> Completed</button>
+    </div>
+
+    <div id="assignmentList" class="assignment-list">
+      <div class="loader">
+        <i class="fas fa-spinner fa-spin"></i> Loading assignments...
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p class="credits">© 2025 BUETK. Designed with <span style="color: #e74c3c;"><i class="fas fa-heart"></i></span> by Jiand Baloch</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      // API Base URL - Replace with your actual backend URL
+      const API_BASE_URL = 'https://your-backend-api.com';
+      
+      // DOM Elements
+      const semesterSelect = document.getElementById('semesterSelect');
+      const assignmentList = document.getElementById('assignmentList');
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const createNewBtn = document.getElementById('createNewBtn');
+      const logoutBtn = document.getElementById('logoutBtn');
+      
+      // State variables
+      let assignments = [];
+      let currentFilter = 'pending';
+      let authToken = null;
+      
+      // Initialize the page
+      async function initPage() {
+        // Check if user is authenticated
+        authToken = localStorage.getItem('token');
+        if (!authToken) {
+          redirectToLogin();
+          return;
+        }
+        
+        // Load semesters and assignments
+        try {
+          await loadSemesters();
+          if (semesterSelect.value) {
+            await loadAssignments(semesterSelect.value);
+          }
+        } catch (error) {
+          showError('Failed to initialize page: ' + error.message);
+        }
+      }
+      
+      // Load semesters from backend
+      async function loadSemesters() {
+        try {
+          const response = await fetch(`${API_BASE_URL}/api/faculty/batches`, {
+            method: 'GET',
+            headers: {
+              'Authorization': `Bearer ${authToken}`,
+              'Content-Type': 'application/json'
+            }
+          });
+          
+          if (!response.ok) {
+            throw new Error('Failed to load semesters');
+          }
+          
+          const semesters = await response.json();
+          populateSemesterSelect(semesters);
+        } catch (error) {
+          semesterSelect.innerHTML = '<option disabled>Error loading semesters</option>';
+          console.error('Error loading semesters:', error);
+        }
+      }
+      
+      // Populate semester dropdown
+      function populateSemesterSelect(semesters) {
+        semesterSelect.innerHTML = '<option disabled selected>Select Semester</option>';
+        semesters.forEach(semester => {
+          const option = document.createElement('option');
+          option.value = semester._id;
+          option.textContent = semester.name;
+          semesterSelect.appendChild(option);
+        });
+      }
+      
+      // Load assignments by semester
+      async function loadAssignments(semesterId) {
+        assignmentList.innerHTML = '<div class="loader"><i class="fas fa-spinner fa-spin"></i> Loading assignments...</div>';
+        
+        try {
+          const response = await fetch(`${API_BASE_URL}/api/faculty/assignments?semester=${semesterId}`, {
+            method: 'GET',
+            headers: {
+              'Authorization': `Bearer ${authToken}`,
+              'Content-Type': 'application/json'
+            }
+          });
+          
+          if (!response.ok) {
+            throw new Error('Failed to load assignments');
+          }
+          
+          assignments = await response.json();
+          renderAssignments();
+        } catch (error) {
+          assignmentList.innerHTML = '<div class="empty-state"><i class="fas fa-exclamation-triangle empty-icon"></i><h3>Failed to Load Assignments</h3><p>Please try again later</p></div>';
+          console.error('Error loading assignments:', error);
+        }
+      }
+      
+      // Render assignments based on current filter
+      function renderAssignments() {
+        if (!assignments || assignments.length === 0) {
+          assignmentList.innerHTML = `
+            <div class="empty-state">
+              <i class="fas fa-book-open empty-icon"></i>
+              <h3>No Assignments Found</h3>
+              <p>Create your first assignment to get started</p>
+            </div>
+          `;
+          return;
+        }
+        
+        const filteredAssignments = assignments.filter(assignment => {
+          if (currentFilter === 'pending') return !assignment.completed;
+          return assignment.completed;
+        });
+        
+        if (filteredAssignments.length === 0) {
+          assignmentList.innerHTML = `
+            <div class="empty-state">
+              <i class="fas fa-check-circle empty-icon"></i>
+              <h3>No ${currentFilter === 'pending' ? 'Pending' : 'Completed'} Assignments</h3>
+              <p>${currentFilter === 'pending' ? 'All assignments are completed!' : 'No assignments have been completed yet'}</p>
+            </div>
+          `;
+          return;
+        }
+        
+        assignmentList.innerHTML = '';
+        
+        filteredAssignments.forEach(assignment => {
+          const dueDate = new Date(assignment.dueDate);
+          const formattedDate = dueDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          });
+          
+          const assignmentItem = document.createElement('div');
+          assignmentItem.className = 'assignment-item';
+          assignmentItem.innerHTML = `
+            <div class="assignment-header">
+              <div class="assignment-title">${assignment.title}</div>
+              <div class="assignment-due"><i class="fas fa-calendar-day"></i> Due: ${formattedDate}</div>
+            </div>
+            <div class="assignment-body">
+              <div class="assignment-meta">
+                <div class="assignment-status ${assignment.completed ? 'completed' : 'pending'}">
+                  <i class="fas ${assignment.completed ? 'fa-check-circle' : 'fa-clock'}"></i>
+                  ${assignment.completed ? 'Completed' : 'Pending'}
+                </div>
+                <div class="assignment-submissions">
+                  <i class="fas fa-users"></i> 24/30 Submitted
+                </div>
+              </div>
+              <div class="assignment-description">
+                ${assignment.description || 'Assignment description not provided'}
+              </div>
+              <div class="assignment-actions">
+                ${assignment.completed ? 
+                  `<button class="btn reopen-btn" data-id="${assignment._id}">
+                    <i class="fas fa-redo"></i> Re-open
+                  </button>` : 
+                  `<button class="btn mark-complete-btn" data-id="${assignment._id}">
+                    <i class="fas fa-check"></i> Mark Complete
+                  </button>`
+                }
+                <button class="btn delete-btn" data-id="${assignment._id}">
+                  <i class="fas fa-trash"></i> Delete
+                </button>
+              </div>
+            </div>
+          `;
+          assignmentList.appendChild(assignmentItem);
+        });
+        
+        attachActionListeners();
+      }
+      
+      // Attach action listeners to buttons
+      function attachActionListeners() {
+        // Mark as complete / Re-open buttons
+        document.querySelectorAll('.mark-complete-btn, .reopen-btn').forEach(btn => {
+          btn.addEventListener('click', async () => {
+            const assignmentId = btn.dataset.id;
+            const isCompleteAction = btn.classList.contains('mark-complete-btn');
+            
+            try {
+              const response = await fetch(`${API_BASE_URL}/api/faculty/assignments/${assignmentId}`, {
+                method: 'PUT',
+                headers: {
+                  'Authorization': `Bearer ${authToken}`,
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ completed: isCompleteAction })
+              });
+              
+              if (!response.ok) {
+                throw new Error(`Failed to ${isCompleteAction ? 'complete' : 'reopen'} assignment`);
+              }
+              
+              // Update local assignment data
+              const assignment = assignments.find(a => a._id === assignmentId);
+              if (assignment) {
+                assignment.completed = isCompleteAction;
+              }
+              
+              renderAssignments();
+            } catch (error) {
+              console.error('Assignment update error:', error);
+              alert(`Failed to ${isCompleteAction ? 'complete' : 'reopen'} assignment: ${error.message}`);
+            }
+          });
+        });
+        
+        // Delete buttons
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+          btn.addEventListener('click', async () => {
+            const assignmentId = btn.dataset.id;
+            
+            if (!confirm('Are you sure you want to delete this assignment? This action cannot be undone.')) {
+              return;
+            }
+            
+            try {
+              const response = await fetch(`${API_BASE_URL}/api/faculty/assignments/${assignmentId}`, {
+                method: 'DELETE',
+                headers: {
+                  'Authorization': `Bearer ${authToken}`,
+                  'Content-Type': 'application/json'
+                }
+              });
+              
+              if (!response.ok) {
+                throw new Error('Failed to delete assignment');
+              }
+              
+              // Remove from local assignments
+              assignments = assignments.filter(a => a._id !== assignmentId);
+              
+              renderAssignments();
+            } catch (error) {
+              console.error('Assignment delete error:', error);
+              alert('Failed to delete assignment: ' + error.message);
+            }
+          });
+        });
+      }
+      
+      // Filter button event listeners
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.dataset.filter;
+          renderAssignments();
+        });
+      });
+      
+      // Semester select change listener
+      semesterSelect.addEventListener('change', () => {
+        if (semesterSelect.value) {
+          loadAssignments(semesterSelect.value);
+        }
+      });
+      
+      // Create new assignment button
+      createNewBtn.addEventListener('click', () => {
+        window.location.href = 'faculty-assignments-create.html';
+      });
+      
+      // Logout functionality
+      logoutBtn.addEventListener('click', () => {
+        localStorage.removeItem('token');
+        redirectToLogin();
+      });
+      
+      function redirectToLogin() {
+        window.location.href = 'login.html';
+      }
+      
+      function showError(message) {
+        assignmentList.innerHTML = `
+          <div class="empty-state">
+            <i class="fas fa-exclamation-triangle empty-icon"></i>
+            <h3>Error</h3>
+            <p>${message}</p>
+          </div>
+        `;
+      }
+      
+      // Initialize the page
+      initPage();
+    });
+  </script>
+</body>
+</html>
