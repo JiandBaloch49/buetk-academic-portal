@@ -55,8 +55,8 @@ A full-featured academic management system for BUETK faculty and students, devel
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/BUETK-Academic-Portal.git
-cd BUETK-Academic-Portal
+https://github.com/JiandBaloch49/buetk-academic-portal.git
+cd buetk-Academic-portal
 ```
 
 ### 2. Install Backend Dependencies
